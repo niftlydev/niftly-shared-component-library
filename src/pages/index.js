@@ -4,6 +4,8 @@ import StaticNavbar from '../components/navbar/static-navbar';
 import LogoImg from '../images/navbar/icon.png';
 import { Footer, Column, ColumnType } from '../components/footer/footer';
 import columnFactory from "../utils/footer/column-factory";
+import { NetlifyForm } from "../components/form/netlify-form";
+import { formFactory } from "../utils/form/form-factory";
 
 // markup
 const IndexPage = () => {
@@ -17,6 +19,8 @@ const IndexPage = () => {
       <title>Home Page</title>
 
       <StaticNavbar links={links} rightLink={rightLink} logoImg={LogoImg} />
+
+      <NetlifyForm forms={formFactory()} />
 
       <Footer columns={columns} />
 
