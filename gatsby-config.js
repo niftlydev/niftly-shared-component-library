@@ -30,6 +30,7 @@ module.exports = {
             },
           },
           `gatsby-transformer-remark`,
-          `gatsby-plugin-typescript`
+          `gatsby-plugin-typescript`,
+          `gatsby-plugin-sass`
     ]
 }
