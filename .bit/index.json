@@ -78,5 +78,21 @@
     },
     "isSymlink": false,
     "hash": "807a50b55bd4f303081cd77f74ec79f5421c7648"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "slider"
+    },
+    "isSymlink": true,
+    "hash": "703c518a23972ccb5a641ead17d3e5305e95da31"
+  },
+  {
+    "id": {
+      "scope": "niftly.shared",
+      "name": "slider"
+    },
+    "isSymlink": false,
+    "hash": "517b99d941c3a552f467ab740a3f221f79fb4dd8"
   }
 ]

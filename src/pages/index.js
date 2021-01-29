@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Button, ButtonGroup, Alert, AlertIcon, Box } from "@chakra-ui/react"
-import { ImageSlider } from '../components/slider/image-slider';
+import { ImageSlider } from '../components/slider';
 import ImageSliderFactory from '../utils/image-slider/image-slider-factory';
 import Layout from '../components/layout/layout';
 
