@@ -31,9 +31,6 @@ const IndexPage = () => {
         </Layout>
 
       <HighlightBox highlights={propertyFactory()} withBorder={true}/>
-
-      <Footer columns={columns} />
-
     </main> 
   )
 }
