@@ -28,16 +28,16 @@ collections:
       - {label: Bio, name: bio, widget: markdown}
       - {label: Featured Image, name: featured-image, widget: image} 
 
-  - name: "testimonials"
-    label: "Testimonials"
-    folder: "static/content/testimonials"
-    create: true
-    slug: "{{slug}}"
-    identifier_field: customer
-    fields: 
-      - {label: "Customer", name: "customer", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Featured Image", name: "featured-image", widget: "image"}
+  # - name: "testimonials"
+  #   label: "Testimonials"
+  #   folder: "static/content/testimonials"
+  #   create: true
+  #   slug: "{{slug}}"
+  #   identifier_field: customer
+  #   fields: 
+  #     - {label: "Customer", name: "customer", widget: "string"}
+  #     - {label: "Body", name: "body", widget: "markdown"}
+  #     - {label: "Featured Image", name: "featured-image", widget: "image"}
   
   # - name: "team"
   #   label: "Team"
