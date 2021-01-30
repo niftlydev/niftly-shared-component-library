@@ -29,8 +29,6 @@ const IndexPage = () => {
         <Layout>
           <HighlightBox highlights={propertyFactory()} withBorder={true}/>
         </Layout>
-
-      <HighlightBox highlights={propertyFactory()} withBorder={true}/>
     </main> 
   )
 }
