@@ -13,26 +13,30 @@ import {InfoBox} from '../components/info-box/info-box';
 import { HighlightBox } from "../components/highlight-box/highlight-box";
 import {highlightBoxFactory} from '../utils/highlight-box/highlight-box-factory';
 import { propertyFactory } from "../utils/property/property-factory";
+import { Button, ButtonGroup, Alert, AlertIcon, Box } from "@chakra-ui/react"
+import { ImageSlider } from '../components/slider';
+import ImageSliderFactory from '../utils/image-slider/image-slider-factory';
+import Layout from '../components/layout/layout';
 
 // markup
 const IndexPage = () => {
 
-  const links = [{text: "About Us", slug: "/about-us"}, {text: "Listings", slug: "/listings"}, {text: "Contact", slug: "/contact"}, {text: "Blog", slug: "/blog"}];
-  const rightLink = {text: "Find Your Home", slug: "/find-your-home"}
-  const columns = columnFactory();
+  const images = ImageSliderFactory();
 
       //<Listing listing={ListingFactory()}/>
   return (
     <main>
       <title>Home Page</title>
 
-      <StaticNavbar links={links} rightLink={rightLink} logoImg={LogoImg} />
+        <Layout>
+          <HighlightBox highlights={propertyFactory()} withBorder={true}/>
+        </Layout>
 
       <HighlightBox highlights={propertyFactory()} withBorder={true}/>
 
       <Footer columns={columns} />
 
-    </main>
+    </main> 
   )
 }
 
