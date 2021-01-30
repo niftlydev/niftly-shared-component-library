@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Button, ButtonGroup, Alert, AlertIcon } from "@chakra-ui/react"
 import StaticNavbar from '../components/navbar/static-navbar';
 import LogoImg from '../images/navbar/icon.png';
 import { Footer, Column, ColumnType } from '../components/footer/footer';
@@ -13,7 +12,6 @@ import {InfoBox} from '../components/info-box/info-box';
 import { HighlightBox } from "../components/highlight-box/highlight-box";
 import {highlightBoxFactory} from '../utils/highlight-box/highlight-box-factory';
 import { propertyFactory } from "../utils/property/property-factory";
-import { Button, ButtonGroup, Alert, AlertIcon, Box } from "@chakra-ui/react"
 import { ImageSlider } from '../components/slider';
 import ImageSliderFactory from '../utils/image-slider/image-slider-factory';
 import Layout from '../components/layout/layout';
