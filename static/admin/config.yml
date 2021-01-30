@@ -5,12 +5,117 @@ publish_mode: editorial_workflow
 media_folder: "static/images/uploads"
 public_folder: /assets
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "static/content/blog" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+    
+  - name: "featured-listing"
+    label: "Featured Listing"
+    folder: "static/content/featured-listings"
     create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+    slug: "{{slug}}"
+    identifier_field: address
+    fields: 
+      - {label: Address, name: address, widget: string}
+      - {label: Bio, name: bio, widget: markdown}
+      - {label: Featured Image, name: featured-image, widget: image} 
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "static/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: customer
+    fields: 
+      - {label: "Customer", name: "customer", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Featured Image", name: "featured-image", widget: "image"}
+  
+  # - name: "team"
+  #   label: "Team"
+  #   folder: "static/content/team"
+  #   create: true
+  #   slug: "{{slug}}"
+  #   identifier_field: name
+  #   fields: 
+  #     - {label: "Name", name: "name", widget: "string"}
+  #     - {label: "Bio", name: "bio", widget: "markdown"}
+  #     - {label: "Featured Image", name: "thumbnail", widget: "image"}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About Us"
+        name: "about"
+        file: "static/content/about.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+          - label: Team Member
+            name: team-member
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Position, name: position, widget: string}
+              - {label: Photo, name: photo, widget: image}
+              - {label: Phone Number, name: phone-number, widget: string}
+              - {label: Email, name: email, widget: string}
+              - {label: Instagram, name: instagram, widget: string}
+              - {label: Facebook, name: facebook, widget: string}
+
+      - label: "Home Page"
+        name: "homepage"
+        file: "static/content/homepage.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+          - {label: Real Estate Logo, name: real-estate-logo, widget: image}
+          - {label: Brokerage Logo, name: brokerage-logo, widget: image}
+
+      - label: "Services"
+        name: "services"
+        file: "static/content/services.md"
+        fields:
+          - {label: Intro, name: intro, widget: markdown}
+          - label: Service
+            name: service
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: markdown}
+              - {label: Service Image, name: service-image, widget: image}
+
+
+      - label: "Contact Us"
+        name: "contact"
+        file: "static/content/contact.md"
+        fields:
+          - {label: Office Email, name: email, widget: string}
+          - {label: Office Phone Number, name: office, widget: string}
+          - {label: Office Address, name: address, widget: string}
+          - {label: Instagram, name: instagram, widget: string}
+          - {label: Facebook, name: facebook, widget: string}
+          - {label: Pinterest, name: instagram, widget: string}
+          - label: Contact
+            name: contact
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Phone Number, name: phonenumber, widget: string}
+              - {label: Email, name: email, widget: string}
+
+      - label: "Landing"
+        name: "landing"
+        file: "static/content/landing.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
