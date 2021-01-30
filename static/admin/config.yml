@@ -50,26 +50,26 @@ collections:
   #     - {label: "Bio", name: "bio", widget: "markdown"}
   #     - {label: "Featured Image", name: "thumbnail", widget: "image"}
 
-  # - name: "pages"
-  #   label: "Pages"
-  #   files:
-  #     - label: "About Us"
-  #       name: "about"
-  #       file: "static/content/about.md"
-  #       fields:
-  #         - {label: Title, name: title, widget: string}
-  #         - {label: Intro, name: intro, widget: markdown}
-  #         - label: Team Member
-  #           name: team-member
-  #           widget: list
-  #           fields:
-  #             - {label: Name, name: name, widget: string}
-  #             - {label: Position, name: position, widget: string}
-  #             - {label: Photo, name: photo, widget: image}
-  #             - {label: Phone Number, name: phone-number, widget: string}
-  #             - {label: Email, name: email, widget: string}
-  #             - {label: Instagram, name: instagram, widget: string}
-  #             - {label: Facebook, name: facebook, widget: string}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About Us"
+        name: "about"
+        file: "static/content/about.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+          - label: Team Member
+            name: team-member
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Position, name: position, widget: string}
+              - {label: Photo, name: photo, widget: image}
+              - {label: Phone Number, name: phone-number, widget: string}
+              - {label: Email, name: email, widget: string}
+              - {label: Instagram, name: instagram, widget: string}
+              - {label: Facebook, name: facebook, widget: string}
 
   #     - label: "Home Page"
   #       name: "homepage"
