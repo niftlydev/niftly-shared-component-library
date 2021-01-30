@@ -20,6 +20,7 @@
     "@chakra-ui/react": "^1.1.4",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
+    "@types/react": "^17.0.0",
     "framer-motion": "^3.2.1",
     "gatsby": "^2.26.1",
     "gatsby-plugin-netlify-cms": "^4.8.0",
@@ -34,7 +35,7 @@
   },
   "bit": {
     "env": {
-      "compiler": "bit.envs/compilers/react-typescript@3.1.64"
+      "compiler": "bit.envs/compilers/typescript@3.1.53"
     },
     "componentsDefaultDirectory": "components/{name}",
     "packageManager": "npm"

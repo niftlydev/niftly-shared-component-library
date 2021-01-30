@@ -3,7 +3,7 @@ import {NetlifyFormItem, InputSize, InputType, INetlifyFormItem} from '../../com
 export const formFactory = () => {
     let forms: Array<INetlifyFormItem> = new Array<INetlifyFormItem>();
 
-    let first: INetlifyFormItem = new NetlifyFormItem("label 1", InputType.Text, InputSize.small, "label 1");
+    let first: INetlifyFormItem = new NetlifyFormItem("label 1", InputType.Text, InputSize.small, "label 1", true);
     let second: INetlifyFormItem = new NetlifyFormItem("label 2", InputType.Text, InputSize.small, "label 2");
     let third: INetlifyFormItem = new NetlifyFormItem("label 3", InputType.Text, InputSize.small, "label 3");
     let fourth: INetlifyFormItem = new NetlifyFormItem("label 4", InputType.Email, InputSize.medium, "label 4");

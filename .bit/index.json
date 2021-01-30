@@ -66,17 +66,113 @@
   {
     "id": {
       "scope": null,
-      "name": "static-navbar"
+      "name": "icon-external-link"
     },
     "isSymlink": true,
-    "hash": "7954c1d948c55a03988150b65de79828e9aa4a01"
+    "hash": "c7b22df1ac87a4f27e28a057fcf9d2339520e2eb"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "info-box"
+    },
+    "isSymlink": true,
+    "hash": "7d36a2109263ef0cf187839f6ab04e29d3fb3ff8"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "info-box-footer"
+    },
+    "isSymlink": true,
+    "hash": "ab2f3c333a21e6d4c862556af8c444d484a6d197"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "listing"
+    },
+    "isSymlink": true,
+    "hash": "6eccfbe291f324971af6784befbc212824e44176"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "social"
+    },
+    "isSymlink": true,
+    "hash": "0dbe529c4dfad996667815f32902cb3a2b94c94f"
   },
   {
     "id": {
       "scope": "niftly.shared",
-      "name": "static-navbar"
+      "name": "icon-external-link"
     },
     "isSymlink": false,
-    "hash": "807a50b55bd4f303081cd77f74ec79f5421c7648"
+    "hash": "1880e961489d318d64c4b6f686ea76150cd3b6f4"
+  },
+  {
+    "id": {
+      "scope": "niftly.shared",
+      "name": "info-box"
+    },
+    "isSymlink": false,
+    "hash": "0b17bc7e2392f15e74e219f1660764cb02a76312"
+  },
+  {
+    "id": {
+      "scope": "niftly.shared",
+      "name": "info-box-footer"
+    },
+    "isSymlink": false,
+    "hash": "0a6bd9578a72840818b8cd3f96f63dea51038b61"
+  },
+  {
+    "id": {
+      "scope": "niftly.shared",
+      "name": "listing"
+    },
+    "isSymlink": false,
+    "hash": "6991b9d45de7b659bf740e43d86c797a9fd7dfee"
+  },
+  {
+    "id": {
+      "scope": "niftly.shared",
+      "name": "social"
+    },
+    "isSymlink": false,
+    "hash": "e94e0be1fd7707fa9ac0dd46dec3c451bba11895"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "highlight-box"
+    },
+    "isSymlink": true,
+    "hash": "a38a51669511f7ab428f6ab7b7c8c6debdde6581"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "property"
+    },
+    "isSymlink": true,
+    "hash": "269fe3733d17108a2c6f28ff0aaeaf65f4705adc"
+  },
+  {
+    "id": {
+      "scope": "niftly.shared",
+      "name": "highlight-box"
+    },
+    "isSymlink": false,
+    "hash": "ce755d3ce50ac145df477f725bf705f33cf21dd1"
+  },
+  {
+    "id": {
+      "scope": "niftly.shared",
+      "name": "property"
+    },
+    "isSymlink": false,
+    "hash": "59e25d47b35f84cafcbf62ed35447d1f9a9cecae"
   }
 ]
