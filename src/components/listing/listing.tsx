@@ -3,7 +3,6 @@ import {Box, Center, Image} from '@chakra-ui/react';
 import { IInfoBox, Info, InfoBox } from '../info-box/info-box';
 
 
-
 export interface IListingItem {
     infoBox: IInfoBox
     image?: any 
