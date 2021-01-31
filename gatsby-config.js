@@ -35,7 +35,7 @@ module.exports = {
               name: `content`,
               path: `${__dirname}/static/content`,
             },
-          }
+          },
           `gatsby-transformer-remark`,
           `gatsby-plugin-typescript`,
           `gatsby-plugin-sass`
