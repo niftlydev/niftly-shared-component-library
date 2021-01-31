@@ -18,27 +18,18 @@ collections:
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Blog Body", name: "blog-body", widget: "markdown"}
     
-  - name: "featured-listing"
-    label: "Featured Listing"
-    folder: "static/content/featured-listings"
+  - name: "listing"
+    label: "Listing"
+    folder: "static/content/listing"
     create: true
     slug: "{{slug}}"
     identifier_field: address
     fields: 
       - {label: Address, name: address, widget: string}
       - {label: Bio, name: bio, widget: markdown}
+      - {label: Price, name: price, widget: string}
       - {label: Listing Image, name: listing-image, widget: image} 
-
-  - name: "testimonials"
-    label: "Testimonials"
-    folder: "static/content/testimonials"
-    create: true
-    slug: "{{slug}}"
-    identifier_field: customer
-    fields: 
-      - {label: "Customer", name: "customer", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Testimonial Image", name: "testimonial-image", widget: "image"}
+      
   
   # - name: "team"
   #   label: "Team"
@@ -54,6 +45,63 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - label: "Layout"
+        name: "layout"
+        file: "static/content/layout.md"
+        fields:
+          - { label: NavRightText, name: nav-right-text, widget: string }
+          - { label: NavRightSlug, name: nav-right-slug, widget: string }
+          - { label: NavLogo, name: nav-logo, widget: image}
+          - label: Navbar Link
+            name: navbar-link
+            widget: list
+            fields:
+              - {label: Text, name: text, widget: string}
+              - {label: Slug, name: slug, widget: string}
+          - label: Footer Column Info
+            name: footer-column-info
+            widget: list
+            fields:
+              - {label: Logo, name: logo, widget: image}
+              - {label: Address, name: address, widget: string}
+              - {label: Phone Number, name: phone-number, widget: string}
+          - label: Footer Column Links
+            name: footer-column-links
+            widget: list
+            fields:
+              - {label: Text, name: text, widget: string}
+              - {label: Slug, name: slug, widget: string}
+          - label: Footer Column Social
+            name: footer-column-social
+            widget: list
+            fields:
+              - {label: Email, name: email, widget: string}
+              - {label: Instagram, name: instagram, widget: string}
+              - {label: Facebook, name: facebook, widget: string}
+              - {label: Pinterest, name: pinterest, widget: string}
+      
+      - label: "Home Page"
+        name: "homepage"
+        file: "static/content/homepage.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+          - {label: Real Estate Logo, name: real-estate-logo, widget: image}
+          - {label: Brokerage Logo, name: brokerage-logo, widget: image}
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: string}
+          - label: Featured-Listings
+            name: featured-listings
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: string}
+              - {label: Photo, name: photo, widget: image}
+
       - label: "About Us"
         name: "about"
         file: "static/content/about.md"
@@ -71,15 +119,12 @@ collections:
               - {label: Email, name: email, widget: string}
               - {label: Instagram, name: instagram, widget: string}
               - {label: Facebook, name: facebook, widget: string}
-
-      - label: "Home Page"
-        name: "homepage"
-        file: "static/content/homepage.md"
-        fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Intro, name: intro, widget: markdown}
-          - {label: Real Estate Logo, name: real-estate-logo, widget: image}
-          - {label: Brokerage Logo, name: brokerage-logo, widget: image}
+          - label: Testimonial
+            name: testimonial
+            widget: list
+            fields:
+              - {label: "Customer", name: "customer", widget: "string"}
+              - {label: "Body", name: "body", widget: "markdown"}
 
       - label: "Services"
         name: "services"
@@ -113,9 +158,3 @@ collections:
               - {label: Phone Number, name: phonenumber, widget: string}
               - {label: Email, name: email, widget: string}
 
-      - label: "Landing"
-        name: "landing"
-        file: "static/content/landing.md"
-        fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Intro, name: intro, widget: markdown}
