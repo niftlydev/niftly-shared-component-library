@@ -13,8 +13,8 @@ export type ListingProps = {
     listing: IListingItem
 }
 
-export class ListingItem implements IListingItem
-{
+export class ListingItem implements IListingItem 
+ {
     infoBox = new Info("", ""); 
     image?: any 
     imageAlt?: string
@@ -31,7 +31,7 @@ export const Listing = ({listing}: ListingProps) => {
     return (
         <Box display="flex" flexDirection="row" margin="5" borderWidth="1px" borderColor="brand.footbarColor">
             <Box flex="1 1 50%">
-                <InfoBox {...listing.infoBox}/>
+                <InfoBox info={listing.infoBox} border={false}/>
             </Box>
             <Box flex="1 1 50%">
                 <Center height="100%">
