@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import {Box, Divider, Heading, Text} from '@chakra-ui/react';
 import { InfoBoxFooter } from './components/info-box-footer';
 import { ISocialItems } from './components/social';
@@ -8,17 +8,17 @@ import { ISocialItems } from './components/social';
 export interface IInfoBox {
     heading: string
     description: string
-    highlight?: string
+    highlight?: ReactElement
     social?: Array<ISocialItems>
 }
 
 export class Info implements IInfoBox {
     heading: string;
     description: string;
-    highlight?: string;
+    highlight?: ReactElement;
     social?: Array<ISocialItems>
 
-    constructor(heading: string, description: string, highlight?: string, social?: Array<ISocialItems>)
+    constructor(heading: string, description: string, highlight?: ReactElement, social?: Array<ISocialItems>)
     {
         this.heading = heading
         this.description = description
@@ -27,18 +27,23 @@ export class Info implements IInfoBox {
     }
 }
 
-export const InfoBox = (info: IInfoBox) => {
+type InfoBoxProps = {
+    info: IInfoBox,
+    border?: boolean
+}
+
+export const InfoBox = ({info, border} : InfoBoxProps) => {
     return (
-        <Box flex="1" height="100%" width="100%" display="flex" flexDirection="column" justifyContent="space-between">
-            <Box flex="8" display="flex" flexDirection="column" justifyContent="space-around" p="10">
-                <Box>
-                    <Heading as="h2" size="lg" paddingBottom="2">{info.heading}</Heading>
+        <Box flex="1" height="100%" width="100%" display="flex" flexDirection="column" justifyContent="space-between" borderColor="brand.footbarColor" borderWidth={border ? "2px" : "0px"}>
+            <Box flex={5} display="flex" flexDirection="column" justifyContent="space-around" p="5%">
+                <Box paddingBottom="5%">
+                    <Heading as="h2" size="lg" paddingBottom="2px">{info.heading}</Heading>
                     <Divider orientation="horizontal" borderWidth=".75px" borderColor="brand.footbarTitleColor" />
                 </Box>
-                <Text fontSize="md">{info.description}</Text>
-                <Heading as="h3" size="xl">{info.highlight}</Heading>
+                <Text fontSize="18px" paddingBottom="5%">{info.description}</Text>
+                {React.cloneElement(info.highlight)}
             </Box>
-            <InfoBoxFooter socials={info.social}/> 
+            <InfoBoxFooter social={info.social}/> 
         </Box>
     )
 }
