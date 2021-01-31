@@ -5,10 +5,10 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa"
 import IconExternalLink from '../../icon/icon-external-link';
 
 type InfoBoxFooterProps = {
-    socials: Array<ISocialItems>
+    social: Array<ISocialItems>
 }
 
-export const InfoBoxFooter = ({socials} : InfoBoxFooterProps) => {
+export const InfoBoxFooter = ({social} : InfoBoxFooterProps) => {
 
     const renderPlatformIcon = (platform: SocialPlatform) => {
         switch(platform)
@@ -25,9 +25,9 @@ export const InfoBoxFooter = ({socials} : InfoBoxFooterProps) => {
     }
 
     return(
-        <Box backgroundColor="brand.footbarColor" flex="1">
+        <Box backgroundColor="brand.footbarColor" padding="1%">
             <Center height="100%">
-                {socials.map((platform: ISocialItems) => {
+                {social?.map((platform: ISocialItems) => {
                     return (
                         <Box color="brand.iconActionColor" marginRight="5">
                             <IconExternalLink

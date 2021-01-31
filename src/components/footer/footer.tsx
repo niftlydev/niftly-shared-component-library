@@ -59,7 +59,7 @@ export class Column {
 export const Footer = ({columns}: {columns: Array<Column>}) => {
     return (
         <Box bg="brand.footbarColor">
-            <Grid templateColumns="repeat(4, 1fr)" gap={6}>
+            <Grid templateColumns="repeat(3, 1fr)" gap={6}>
                 {columns.map(column => 
                     <Box w="100%" h="200px">
                         <Box><Center><Text color="brand.footbarTitleColor" as="u" fontSize="3xl">{column.title}</Text></Center></Box>

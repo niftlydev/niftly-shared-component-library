@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Divider} from '@chakra-ui/react';
+import {Box, Center, Divider} from '@chakra-ui/react';
 
 export enum HighlightSize {
     sm,
@@ -20,8 +20,8 @@ export const HighlightBox = ({highlights, size, withBorder = false} : HighlightB
         return highlights.map((h, i) => {
             return (
                 <Box flex={calculateSize()} display="flex" flexDirection="row">
-                    <Box p="5">{h}</Box>
-                    {withBorder && i < highlights.length -1 ? <Divider h="80%" alignSelf="center" borderColor="brand.footbarTitleColor" orientation="vertical"/> : <></>}
+                    <Box textAlign="center" padding="15%">{h}</Box>
+                    {withBorder && i < highlights.length -1 ? <Divider h="90%" alignSelf="center" borderColor="brand.footbarTitleColor" orientation="vertical"/> : <></>}
                 </Box>
             ) 
         });

@@ -14,7 +14,9 @@ import { ImageSlider } from '../components/slider';
 import ImageSliderFactory from '../utils/image-slider/image-slider-factory';
 import { ServicesBoxFactory } from '../utils/front-page/services-box';
 import Layout from '../components/layout/layout';
-import { Box } from '@chakra-ui/react';
+import {AboutUs} from '../components/about-us/about-us';
+import {Box, Image, Text, Center} from '@chakra-ui/react';
+import ImageOne from '../images/image-slider/stock-photo-1.jpg'
 
 // markup
 const IndexPage = () => {
