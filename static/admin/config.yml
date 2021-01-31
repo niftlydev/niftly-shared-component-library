@@ -18,15 +18,16 @@ collections:
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Blog Body", name: "blog-body", widget: "markdown"}
     
-  - name: "featured-listing"
-    label: "Featured Listing"
-    folder: "static/content/featured-listings"
+  - name: "listing"
+    label: "Listing"
+    folder: "static/content/listing"
     create: true
     slug: "{{slug}}"
     identifier_field: address
     fields: 
       - {label: Address, name: address, widget: string}
       - {label: Bio, name: bio, widget: markdown}
+      - {label: Price, name: price, widget: string}
       - {label: Listing Image, name: listing-image, widget: image} 
 
   - name: "testimonials"
@@ -80,6 +81,19 @@ collections:
           - {label: Intro, name: intro, widget: markdown}
           - {label: Real Estate Logo, name: real-estate-logo, widget: image}
           - {label: Brokerage Logo, name: brokerage-logo, widget: image}
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: string}
+          - label: Featured-Listings
+            name: featured-listings
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: string}
+              - {label: Photo, name: photo, widget: image}
 
       - label: "Services"
         name: "services"
@@ -119,3 +133,14 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
+
+      - label: "Layout"
+        name: "layout"
+        file: "static/content/layout.md"
+        fields:
+          - label: Navbar Link
+            name: navbar-link
+            widget: list
+            fields:
+              - {label: Text, name: text, widget: string}
+              - {label: Slug, name: slug, widget: string}
