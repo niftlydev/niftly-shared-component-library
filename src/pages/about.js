@@ -18,11 +18,26 @@ import Layout from '../components/layout/layout';
 import {AboutUs} from '../components/about-us/about-us';
 import {Box, Image, Text, Center} from '@chakra-ui/react';
 import ImageOne from '../images/image-slider/stock-photo-1.jpg'
+import {useStaticQuery, graphql} from 'gatsby';
 
 // markup
 const AboutPage = () => {
 
-  const images = ImageSliderFactory();
+  let x = useStaticQuery(
+    graphql`
+      query MyQuery {
+        site {
+          siteMetadata {
+            description
+            title
+          }
+        }
+      }
+    `
+  );
+
+  console.log('x is');
+  console.log(x);
 
       //<Listing listing={ListingFactory()}/>
   return (
