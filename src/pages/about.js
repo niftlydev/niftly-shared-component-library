@@ -23,22 +23,6 @@ import {useStaticQuery, graphql} from 'gatsby';
 // markup
 const AboutPage = () => {
 
-  let x = useStaticQuery(
-    graphql`
-      query MyQuery {
-        site {
-          siteMetadata {
-            description
-            title
-          }
-        }
-      }
-    `
-  );
-
-  console.log('x is');
-  console.log(x);
-
       //<Listing listing={ListingFactory()}/>
   return (
     <main>
