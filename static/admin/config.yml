@@ -115,8 +115,8 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: JumboImage, name: jumbo-image, widget: image}
-          - label: Intro 
-            name: intro 
+          - label: IntroList
+            name: intro-list 
             widget: list
             fields: 
               - {label: IntroItem, name: intro-item, widget: markdown}
