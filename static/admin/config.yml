@@ -114,7 +114,12 @@ collections:
         file: "static/content/about.md"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Intro, name: intro, widget: markdown}
+          - {label: JumboImage, name: jumboImage, widget: image}
+          - label: Intro 
+            name: intro 
+            widget: list
+            fields: 
+              - {label: IntroItem, name: introItem, widget: markdown}
           - label: Team Member
             name: team-member
             widget: list
