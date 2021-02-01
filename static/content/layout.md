@@ -12,9 +12,9 @@ navbar-link:
   - text: Blog
     slug: /blog
 footer-column-info:
-  - logo: /assets/artboard-1.png
-    address: 1234 whahtever lane my guy
-    phone-number: "4051234567"
+  - logo: /images/uploads/artboard-1.png
+    address: 1234 asdffdsa ln.
+    phone-number: (405) 637-8973
 footer-column-links:
   - text: About
     slug: /about
