@@ -57,7 +57,7 @@ export default function Layout({ children }: {data: any, children: any}) {
 
   return (
       <Box>
-          <StaticNavbar links={data.layout.frontmatter.navbar_link} rightLink={new Link(data.layout.frontmatter.nav_right_text, data.layout.frontmatter.nav_right_slug)} logoImg={LogoImg} />
+          <StaticNavbar links={data.layout.frontmatter.navbar_link} rightLink={new Link(data.layout.frontmatter.nav_right_text, data.layout.frontmatter.nav_right_slug)} logoImg={data.layout.frontmatter.nav_logo} />
             {children}
            <Footer columns={columns} />
       </Box>
