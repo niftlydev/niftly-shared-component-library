@@ -6,16 +6,58 @@ import LogoImg from '../../images/navbar/icon.png';
 import columnFactory from "../../utils/footer/column-factory";
 import { Footer, Column, ColumnType } from '../footer/footer';
 import StaticNavbar from '../navbar/static-navbar';
+import { useStaticQuery, graphql } from "gatsby";
 
 
-export default function Layout({ children }) {
-    const links = [{text: "About Us", slug: "/about-us"}, {text: "Listings", slug: "/listings"}, {text: "Contact", slug: "/contact"}, {text: "Blog", slug: "/blog"}];
-    const rightLink = {text: "Find Your Home", slug: "/find-your-home"}
-    const columns = columnFactory();
+export class Link {
+  constructor(text, slug){
+    this.text = text;
+    this.slug;
+  }
+
+  text: string;
+  slug: string;
+}
+
+
+export default function Layout({ children }: {data: any, children: any}) {
+    
+  const columns = columnFactory();
+
+  const data = useStaticQuery(graphql`
+  query LayoutQuery {
+    layout: markdownRemark(fileAbsolutePath: {regex: "/layout.md/"}) {
+      frontmatter {
+        nav_logo
+        nav_right_slug
+        nav_right_text
+        footer_column_info { 
+          address
+          logo
+          phone_number
+        }
+        footer_column_links {
+          slug
+          text
+        }
+        footer_column_social {
+          facebook
+          instagram
+          pinterest
+          email
+        }
+        navbar_link {
+          slug
+          text
+        }
+      }
+    }
+  }
+`)
 
   return (
       <Box>
-          <StaticNavbar links={links} rightLink={rightLink} logoImg={LogoImg} />
+          <StaticNavbar links={data.layout.frontmatter.navbar_link} rightLink={new Link(data.layout.frontmatter.nav_right_text, data.layout.frontmatter.nav_right_slug)} logoImg={data.layout.frontmatter.nav_logo} />
             {children}
            <Footer columns={columns} />
       </Box>

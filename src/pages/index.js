@@ -19,7 +19,7 @@ import {Box, Image, Text, Center} from '@chakra-ui/react';
 import ImageOne from '../images/image-slider/stock-photo-1.jpg'
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({data}) => {
 
   return (
     <main>
@@ -37,3 +37,8 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+// export const pageQuery = graphql`
+//   {
+//   }   
+// `;
