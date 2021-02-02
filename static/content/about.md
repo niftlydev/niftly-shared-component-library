@@ -35,10 +35,13 @@ team-member:
     facebook: link
     photo: /images/uploads/stock-photo-3.jpg
 testimonial:
-  - body: Description, this is some text. Some test text which is weird because test and text only have 1 letter difference.
+  - body: Description, this is some text. Some test text which is weird because test
+      and text only have 1 letter difference.
     customer: Test 1
-  - body: Description, this is some text. Some test text which is weird because test and text only have 1 letter difference.
+  - body: Description, this is some text. Some test text which is weird because test
+      and text only have 1 letter difference.
     customer: Test 2
-  - body: Description, this is some text. Some test text which is weird because test and text only have 1 letter difference.
+  - body: Description, this is some text. Some test text which is weird because test
+      and text only have 1 letter difference.
     customer: Test 3
 ---
