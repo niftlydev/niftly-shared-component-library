@@ -19,7 +19,7 @@ const IndexPage = ({data}) => {
             <ImageSlider width={"100%"} height={"500px"} images={data.homepage.frontmatter.slider_images} />
           </Box>
           <HighlightBox highlights={ServicesBoxFactory(data.homepage.frontmatter.services)} />
-          <HighlightBox highlights={propertyFactory()} withBorder={true}/>
+          <HighlightBox highlights={propertyFactory(data.homepage.frontmatter.featured_listings)} withBorder={true}/>
         </Layout>
     </main> 
   )
@@ -28,17 +28,22 @@ const IndexPage = ({data}) => {
 export default IndexPage
 
 export const pageQuery = graphql`
-query HomepageQuery {
-  homepage: markdownRemark(fileAbsolutePath: {regex: "/homepage.md/"}) {
-    frontmatter {
-      slider_images {
-        image
-      }
-      services {
-        title
-        description
+  query HomepageQuery {
+    homepage: markdownRemark(fileAbsolutePath: {regex: "/homepage.md/"}) {
+      frontmatter {
+        slider_images {
+          image
+        }
+        services {
+          title
+          description
+        }
+        featured_listings {
+          address
+          photo
+          price
+        }
       }
     }
   }
-}
 `;
