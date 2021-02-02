@@ -30,5 +30,14 @@ services:
   - title: Test Yo Yo Yo
     description: Description, this is some text. Some test text which is weird
       because test and text only have 1 letter difference.
-featured-listings: []
+featured-listings:
+  - address: 1234 Address Ln.
+    price: 120,000
+    photo: /images/uploads/stock-photo-1.jpg
+  - address: 456 Streety St
+    price: 500,000
+    photo: /images/uploads/stock-photo-2.jpg
+  - address: 789 Terrance Terrace
+    price: 999,000
+    photo: /images/uploads/stock-photo-3.jpg
 ---
