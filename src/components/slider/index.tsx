@@ -27,7 +27,7 @@ export const ImageSlider = ({images, padding, height, width}: {images: Array<any
                     return (
                         <Box p="5px">
                             <Center>
-                                <Image h={height} w={width} objectFit="cover" src={image} />
+                                <Image h={height} w={width} objectFit="cover" src={image.image} />
                             </Center>                          
                         </Box>
                     )
