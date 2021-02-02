@@ -20,4 +20,15 @@ slider-images:
   - image: /images/uploads/stock-photo-1.jpg
     description: Move in!
     slug: /find-your-home
+services:
+  - title: Test Yo
+    description: Description, this is some text. Some test text which is weird
+      because test and text only have 1 letter difference.
+  - description: Description, this is some text. Some test text which is weird
+      because test and text only have 1 letter difference.
+    title: Test Yo Yo
+  - title: Test Yo Yo Yo
+    description: Description, this is some text. Some test text which is weird
+      because test and text only have 1 letter difference.
+featured-listings: []
 ---
