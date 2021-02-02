@@ -1,22 +1,11 @@
 import * as React from "react"
-import StaticNavbar from '../components/navbar/static-navbar';
-import LogoImg from '../images/navbar/icon.png';
-import { Footer, Column, ColumnType } from '../components/footer/footer';
-import columnFactory from "../utils/footer/column-factory";
-import { NetlifyForm } from "../components/form/netlify-form";
-import { formFactory } from "../utils/form/form-factory";
-import { infobox } from "../utils/info-box/info-box-factory";
-import {InfoBox} from '../components/info-box/info-box';
 import { HighlightBox } from "../components/highlight-box/highlight-box";
-import {highlightBoxFactory} from '../utils/highlight-box/highlight-box-factory';
 import { propertyFactory } from "../utils/property/property-factory";
 import { ImageSlider } from '../components/slider';
-import ImageSliderFactory from '../utils/image-slider/image-slider-factory';
 import { ServicesBoxFactory } from '../utils/front-page/services-box';
 import Layout from '../components/layout/layout';
-import {AboutUs} from '../components/about-us/about-us';
 import {Box, Image, Text, Center} from '@chakra-ui/react';
-import ImageOne from '../images/image-slider/stock-photo-1.jpg'
+import { graphql } from 'gatsby';
 
 // markup
 const IndexPage = ({data}) => {
@@ -27,9 +16,9 @@ const IndexPage = ({data}) => {
 
         <Layout>
           <Box pb="10px">
-            <ImageSlider width={"100%"} height={"500px"} images={ImageSliderFactory()} />
+            <ImageSlider width={"100%"} height={"500px"} images={data.homepage.frontmatter.slider_images} />
           </Box>
-          <HighlightBox highlights={ServicesBoxFactory()} />
+          <HighlightBox highlights={ServicesBoxFactory(data.homepage.frontmatter.services)} />
           <HighlightBox highlights={propertyFactory()} withBorder={true}/>
         </Layout>
     </main> 
@@ -38,7 +27,18 @@ const IndexPage = ({data}) => {
 
 export default IndexPage
 
-// export const pageQuery = graphql`
-//   {
-//   }   
-// `;
+export const pageQuery = graphql`
+query HomepageQuery {
+  homepage: markdownRemark(fileAbsolutePath: {regex: "/homepage.md/"}) {
+    frontmatter {
+      slider_images {
+        image
+      }
+      services {
+        title
+        description
+      }
+    }
+  }
+}
+`;
