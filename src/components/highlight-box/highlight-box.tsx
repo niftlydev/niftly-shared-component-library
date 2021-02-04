@@ -8,23 +8,47 @@ export enum HighlightSize {
     xl
 }
 
+export enum PaddingSize {
+    xs,
+    sm,
+    md,
+    lg,
+    xl
+}
+
 type HighlightBoxProps = {
     highlights: Array<any>,
     size: HighlightSize
+    padding: PaddingSize
     withBorder?: boolean
 }
 
-export const HighlightBox = ({highlights, size, withBorder = false} : HighlightBoxProps) => {
+export const HighlightBox = ({highlights, size, padding, withBorder = false} : HighlightBoxProps) => {
 
     const renderHighlights = () => {
         return highlights.map((h, i) => {
             return (
                 <Box flex={calculateSize()} display="flex" flexDirection="row">
-                    <Box textAlign="center" padding="15%">{h}</Box>
+                    <Box textAlign="center" padding={calculatePadding()}>{h}</Box>
                     {withBorder && i < highlights.length -1 ? <Divider h="90%" alignSelf="center" borderColor="brand.footbarTitleColor" orientation="vertical"/> : <></>}
                 </Box>
             ) 
         });
+    }
+
+    const calculatePadding = () => {
+        switch(padding) {
+            case PaddingSize.xs:
+                return '1%'; 
+            case PaddingSize.sm:
+                return '2%'; 
+            case PaddingSize.md:
+                return '5%'; 
+            case PaddingSize.lg:
+                return '10%'; 
+            case PaddingSize.xl:
+                return '15%'; 
+        }
     }
 
     const calculateSize = () => {

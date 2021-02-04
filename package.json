@@ -23,6 +23,7 @@
     "@types/react": "^17.0.0",
     "@types/react-slick": "^0.23.4",
     "framer-motion": "^3.2.1",
+    "fs": "0.0.1-security",
     "gatsby": "^2.26.1",
     "gatsby-plugin-netlify-cms": "^4.8.0",
     "gatsby-plugin-sass": "^3.1.0",
