@@ -173,7 +173,7 @@ collections:
       
       - label: "Listings"
         name: "listings"
-        file: "static/listings/listings.md"
+        file: "static/content/listings.md"
         fields: 
           - label: Listing
             name: listing
