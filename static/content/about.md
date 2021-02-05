@@ -18,17 +18,19 @@ intro-list:
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.
 team-member:
-  - name: Bianca Daneshmand
-    position: "Lorem ipsum dolor sit amet,  consectetur adipiscing elit, sed  do
+  - name: Josh Daugherty
+    description: Lorem ipsum dolor sit amet,  consectetur adipiscing elit, sed  do
       eiusmod tempor incididunt ut  labore et dolore magna aliqua. "
+    position: Position
     phone-number: 55-555-5555
     email: bdaneshmand@something.com
     instagram: link
     facebook: link
     photo: /images/uploads/stock-photo-3.jpg
-  - name: Bianca Daneshmand
-    position: "Lorem ipsum dolor sit amet,  consectetur adipiscing elit, sed  do
+  - name: Caleb Kliewer 
+    description: Lorem ipsum dolor sit amet,  consectetur adipiscing elit, sed  do
       eiusmod tempor incididunt ut  labore et dolore magna aliqua. "
+    position: "Senior Cool Guy "
     phone-number: 55-555-5555
     email: bdaneshmand@something.com
     instagram: link

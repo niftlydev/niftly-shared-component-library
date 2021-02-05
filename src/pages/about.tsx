@@ -9,11 +9,12 @@ import {Box, Image, Text, Center} from '@chakra-ui/react';
 import { useAboutData } from "../queries/about-query";
 import { ISocialItems, SocialItem, SocialPlatform } from "../components/info-box/components/social";
 import { Testimonial } from '../components/testimonial/testimonial';
+import { IListingItem, Listing, ListingItem } from "../components/listing/listing";
 
 // markup
 const AboutPage = () => {
 
-  const {intro_list, jumbo_image, team_member, testimonial, title} = useAboutData();  
+  const {intro_list, jumbo_image, team_member, testimonial, title, fileAbsolutePath} = useAboutData();  
 
   let tests = [];
   testimonial.forEach(t => {
@@ -44,6 +45,7 @@ const AboutPage = () => {
             <Box flex="1 0 25%" display="flex" flexDirection="row" justifyContent="space-between" p="2.5%">
               {team_member.map(member => {
                 let highlight = <div>
+                  {member.position ? <p style={{fontWeight: 'bold'}}>{member.position}</p> : <></>}
                   <p>{member.email}</p>
                   <p>{member.phone_number}</p>
                 </div>
@@ -56,9 +58,10 @@ const AboutPage = () => {
 
                 const info: IInfoBox = new Info(
                   member.name,
-                  member.position,
+                  member.description,
                   highlight,
-                  socials
+                  socials,
+                  member.photo
                 );
 
                 return (

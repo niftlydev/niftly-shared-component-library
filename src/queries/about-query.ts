@@ -19,6 +19,7 @@ export const useAboutData = () => {
                             phone_number
                             photo
                             position
+                            description
                         }
                         testimonial {
                             body
@@ -26,11 +27,12 @@ export const useAboutData = () => {
                         }
                         jumbo_image
                         }
+                        fileAbsolutePath
                     }
                 }
             }
         `
     );
 
-    return allMarkdownRemark.nodes[0].frontmatter;
+    return {...allMarkdownRemark.nodes[0].frontmatter, ...allMarkdownRemark.nodes[0]};
 }
