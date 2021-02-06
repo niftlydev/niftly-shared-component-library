@@ -21,7 +21,7 @@ export class Link {
 
 export default function Layout({ children }: {data: any, children: any}) {
     
-  const data = useStaticQuery(graphql`
+const data = useStaticQuery(graphql`
   query LayoutQuery {
     layout: markdownRemark(fileAbsolutePath: {regex: "/layout.md/"}) {
       frontmatter {

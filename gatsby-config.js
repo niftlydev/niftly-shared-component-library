@@ -1,6 +1,5 @@
 module.exports = {
     plugins: [
-        `gatsby-plugin-netlify-cms`,
         {
             resolve: "@chakra-ui/gatsby-plugin",
             options: {
@@ -25,6 +24,13 @@ module.exports = {
           {
             resolve: `gatsby-source-filesystem`,
             options: {
+              path: `${__dirname}/static/images/uploads`,
+              name: `uploads`
+            },
+          },
+          {
+            resolve: `gatsby-source-filesystem`,
+            options: {
               name: `markdown-pages`,
               path: `${__dirname}/src/markdown-pages`,
             },
@@ -36,8 +42,27 @@ module.exports = {
               path: `${__dirname}/static/content`,
             },
           },
-          `gatsby-transformer-remark`,
+          `gatsby-transformer-sharp`,
+          `gatsby-plugin-sharp`,
+          {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+              plugins: [
+                {
+                  resolve: `gatsby-remark-relative-images`,
+                  options: {
+                    staticFolderName: "static/images/uploads"
+                  }
+                },
+                {
+                  resolve: `gatsby-remark-images`,
+                  options: { maxWidth: 1024},
+                },
+              ],
+            },
+          },
           `gatsby-plugin-typescript`,
-          `gatsby-plugin-sass`
+          `gatsby-plugin-sass`,
+          `gatsby-plugin-netlify-cms`
     ]
 }
