@@ -33,7 +33,13 @@ module.exports = {
               path: `${__dirname}/static/content`,
             },
           },
-          {
+					{
+            resolve: `gatsby-source-filesystem`,
+            options: {
+              path: `${__dirname}/static/listings`,
+            },
+          },
+					{
             resolve: `gatsby-transformer-remark`,
             options: {
               plugins: [
@@ -58,7 +64,7 @@ module.exports = {
                 },
               ],
             },
-          },
+					},
           `gatsby-plugin-typescript`,
           `gatsby-plugin-sass`,
           `gatsby-plugin-netlify-cms`
