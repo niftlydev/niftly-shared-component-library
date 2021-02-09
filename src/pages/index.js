@@ -32,7 +32,11 @@ export const pageQuery = graphql`
     homepage: markdownRemark(fileAbsolutePath: {regex: "/homepage.md/"}) {
       frontmatter {
         slider_images {
-          image
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
         services {
           title

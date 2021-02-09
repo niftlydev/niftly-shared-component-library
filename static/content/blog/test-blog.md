@@ -1,5 +1,5 @@
 ---
-layout: blog
+slug: test-blog
 title: Test Blog
 date: 2021-02-06T16:07:07.683Z
 thumbnail: /images/uploads/stock-photo-3.jpg
