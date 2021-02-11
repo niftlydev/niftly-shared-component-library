@@ -4,24 +4,25 @@ export const useListingData = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
         query Listings {
-            allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/listings.md/"}}) {
-              edges {
-                node {
-                  fileAbsolutePath
-                  frontmatter {
-                    listing {
-                      description
-                      photo
-                      price
-                    }
-                  }
+					allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/content/listing//"}}) {
+						edges {
+							node {
+								fileAbsolutePath
+								frontmatter {
+									address
+                  bio
+									price
+									listing_image
+								}
+                fields {
+                  slug
                 }
-              }
-            }
-          }
-          
+							}
+						}
+					}
+        }
         `
     );
 
-    return {...allMarkdownRemark.edges[0].node.frontmatter, ...allMarkdownRemark.edges[0].node};
+    return {...allMarkdownRemark};
 }
