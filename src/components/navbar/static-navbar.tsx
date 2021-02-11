@@ -13,7 +13,7 @@ const StaticNavbar = ({links, rightLink, logoImg}: {links: Array<LinkToPage>, ri
     return (
         <Box alignItems="center" bg="brand.navbarColor" w="100%" p={4}>
             <Flex>
-                <Box bg="brand.navbarColor">
+                <Box as={Link} to="/" bg="brand.navbarColor">
                     <Center>
                         <Img style={{height: "50px", width: "100px"}}
                             fluid={logoImg.childImageSharp.fluid}

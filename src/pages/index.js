@@ -17,11 +17,11 @@ const IndexPage = ({data}) => {
 
         <Layout>
 
-          <Box p="10px">
-            <MainHighlightBox heading="asdf" body="asdfasdfasdfasdfasdfasfadfasdf" actionText="action text" img={data.homepage.frontmatter.slider_images[0].image} />
+          <Box pb="20px" pr="20px" pl="20px">
+            <MainHighlightBox data={data.homepage.frontmatter.main_highlight_box} />
           </Box>
 
-          <Box p="10px">          
+          <Box p="20px" pb="50px">          
             <HighlightBox highlights={ServicesBoxFactory(data.homepage.frontmatter.services)} />
           </Box>
 
@@ -40,17 +40,6 @@ export const pageQuery = graphql`
 query HomepageQuery {
   homepage: markdownRemark(fileAbsolutePath: {regex: "/homepage.md/"}) {
     frontmatter {
-      slider_images {
-        description
-        slug
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
       services {
         title
         description
@@ -65,6 +54,19 @@ query HomepageQuery {
           }
         }
         price
+      }
+      main_highlight_box {
+        action_slug
+        action_text
+        body
+        heading
+        image {
+					childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
