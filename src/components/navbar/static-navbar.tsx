@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Box, Flex, Center, Spacer, Grid, Image, Button} from '@chakra-ui/react';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 export interface LinkToPage {
     text: string;
@@ -8,13 +9,15 @@ export interface LinkToPage {
 }
 
 const StaticNavbar = ({links, rightLink, logoImg}: {links: Array<LinkToPage>, rightLink: LinkToPage, logoImg: any}) => {
-    
+
     return (
         <Box alignItems="center" bg="brand.navbarColor" w="100%" p={4}>
             <Flex>
                 <Box bg="brand.navbarColor">
                     <Center>
-                        <Image boxSize="50px" src={logoImg} />
+                        <Img style={{height: "50px", width: "100px"}}
+                            fluid={logoImg.childImageSharp.fluid}
+                        />
                     </Center>                 
                 </Box>
                 <Spacer />

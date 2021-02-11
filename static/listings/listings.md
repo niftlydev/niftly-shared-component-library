@@ -19,7 +19,7 @@ listing:
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.
     price: $150,000
-    photo: /images/uploads/stock-photo-3.jpg
+    photo: /images/stock-photo-3.jpg
   - name: 74434 East Sweet Bottom Br
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

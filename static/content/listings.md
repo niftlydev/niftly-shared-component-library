@@ -9,7 +9,7 @@ listing:
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.
     price: $150,000
-    photo: /images/uploads/stock-photo-1.jpg
+    photo: /images/stock-photo-1.jpg
   - name: 3509 CHEYENNE DR
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -19,7 +19,7 @@ listing:
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.
     price: $150,000
-    photo: /images/uploads/stock-photo-3.jpg
+    photo: /images/stock-photo-3.jpg
   - name: 3509 CHEYENNE DR
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -29,5 +29,5 @@ listing:
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.
     price: $150,000
-    photo: /images/uploads/stock-photo-2.jpg
+    photo: /images/stock-photo-2.jpg
 ---

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Grid, Icon, GridItem, Image, Center } from '@chakra-ui/react';
+import React from 'react';
+import { Box, Center } from '@chakra-ui/react';
 import Slider from "react-slick";
 import './styles/image-slider-styles.scss';
-import { GatsbyImage, getImage} from 'gatsby-plugin-image';
+import Img from 'gatsby-image';
 
 export const ImageSlider = ({images, padding, height, width}: {images: Array<any>, padding: string, height: string, width: string}) => {
 
@@ -25,13 +25,13 @@ export const ImageSlider = ({images, padding, height, width}: {images: Array<any
         <Box p={padding}>
             <Slider {...settings}>
                 {images.map((image) => {
-                    return (
-                        <Box p="5px">
-                            <Center>
-                                <Image h={height} w={width} objectFit="cover" src={image.image} />
-                                {/* <GatsbyImage image={image.image} alt="" /> */}
-                            </Center>                          
-                        </Box>
+                    return (          
+                        <Center>
+                            <Img
+                                fluid={image.image.childImageSharp.fluid}
+                                alt="asdf;lkj"
+                            />
+                        </Center>                                    
                     )
                 })}
             </Slider>

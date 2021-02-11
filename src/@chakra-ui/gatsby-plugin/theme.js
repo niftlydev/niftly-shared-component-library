@@ -13,6 +13,11 @@ const theme = extendTheme ({
         iconActionColor: '#ffffff',
       },
     },
+    fonts: {
+      body: "system-ui, sans-serif",
+      heading: "Ariel, serif",
+      mono: "Menlo, monospace",
+    },
 })
   
 

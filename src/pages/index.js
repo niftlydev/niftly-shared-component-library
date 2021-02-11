@@ -6,6 +6,7 @@ import { ServicesBoxFactory } from '../utils/front-page/services-box';
 import Layout from '../components/layout/layout';
 import {Box, Image, Text, Center} from '@chakra-ui/react';
 import { graphql } from 'gatsby';
+import { MainHighlightBox } from '../components/main-highlight-box/main-highlight-box';
 
 // markup
 const IndexPage = ({data}) => {
@@ -15,11 +16,19 @@ const IndexPage = ({data}) => {
       <title>Home Page</title>
 
         <Layout>
-          <Box pb="10px">
-            <ImageSlider width={"100%"} height={"500px"} images={data.homepage.frontmatter.slider_images} />
+
+          <Box p="10px">
+            <MainHighlightBox heading="asdf" body="asdfasdfasdfasdfasdfasfadfasdf" actionText="action text" img={data.homepage.frontmatter.slider_images[0].image} />
           </Box>
-          <HighlightBox highlights={ServicesBoxFactory(data.homepage.frontmatter.services)} />
-          <HighlightBox highlights={propertyFactory(data.homepage.frontmatter.featured_listings)} withBorder={true}/>
+
+          <Box p="10px">          
+            <HighlightBox highlights={ServicesBoxFactory(data.homepage.frontmatter.services)} />
+          </Box>
+
+          {/* <Box w="100%" p="10px">
+            <HighlightBox highlights={propertyFactory(data.homepage.frontmatter.featured_listings)} withBorder={true}/>
+          </Box> */}
+
         </Layout>
     </main> 
   )
@@ -28,26 +37,36 @@ const IndexPage = ({data}) => {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query HomepageQuery {
-    homepage: markdownRemark(fileAbsolutePath: {regex: "/homepage.md/"}) {
-      frontmatter {
-        slider_images {
+query HomepageQuery {
+  homepage: markdownRemark(fileAbsolutePath: {regex: "/homepage.md/"}) {
+    frontmatter {
+      slider_images {
+        description
+        slug
+        image {
           childImageSharp {
-            fluid(maxWidth: 400) {
+            fluid {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        services {
-          title
-          description
+      }
+      services {
+        title
+        description
+      }
+      featured_listings {
+        address
+        photo {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
-        featured_listings {
-          address
-          photo
-          price
-        }
+        price
       }
     }
   }
+}
 `;

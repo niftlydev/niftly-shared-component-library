@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Center, Text } from '@chakra-ui/react';
+import { Box, Grid, Center, Text, Heading } from '@chakra-ui/react';
 import FooterColumnParent from './components/footer-column-parent';
 
 export enum ColumnType {
@@ -62,7 +62,7 @@ export const Footer = ({columns}: {columns: Array<Column>}) => {
             <Grid templateColumns="repeat(3, 1fr)" gap={6}>
                 {columns.map(column => 
                     <Box w="100%" h="200px">
-                        <Box><Center><Text color="brand.footbarTitleColor" as="u" fontSize="3xl">{column.title}</Text></Center></Box>
+                        <Box padding="10px"><Center><Heading color="brand.footbarTitleColor" as="u" fontSize="3xl">{column.title}</Heading></Center></Box>
                         <Box padding="10px" color="white"><Center><FooterColumnParent column={column} /></Center></Box>                    
                     </Box>
                 )}               

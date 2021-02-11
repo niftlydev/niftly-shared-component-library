@@ -25,6 +25,13 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        thumbnail {
+          childImageSharp {
+            fixed(width: 125, height: 125) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
     }
   }
