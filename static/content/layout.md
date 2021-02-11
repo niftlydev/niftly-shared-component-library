@@ -1,7 +1,7 @@
 ---
 nav-right-text: Find Your Home
 nav-right-slug: /contact
-nav-logo: /images/uploads/artboard-1.png
+nav-logo: /images/artboard-1.png
 navbar-link:
   - text: About Us
     slug: /about
@@ -12,7 +12,7 @@ navbar-link:
   - text: Blog
     slug: /blog
 footer-column-info:
-  - logo: /images/uploads/artboard-1.png
+  - logo: /images/artboard-1.png
     address: 1234 asdffdsa ln.
     phone-number: (405) 637-8973
 footer-column-links:

@@ -9,5 +9,5 @@ bio: >-
 
   <!--EndFragment-->
 price: 295,000
-listing-image: /images/uploads/stock-photo-1.jpg
+listing-image: /images/stock-photo-1.jpg
 ---

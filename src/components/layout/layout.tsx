@@ -1,6 +1,4 @@
 import React from "react"
-// import "../../../node_modules/slick-carousel/slick"; 
-// import "../../../node_modules/slick-carousel/slick";
 import {Box} from '@chakra-ui/react';
 import columnFactory from "../../utils/footer/column-factory";
 import { Footer, Column, ColumnType } from '../footer/footer';
@@ -25,12 +23,24 @@ const data = useStaticQuery(graphql`
   query LayoutQuery {
     layout: markdownRemark(fileAbsolutePath: {regex: "/layout.md/"}) {
       frontmatter {
-        nav_logo
+        nav_logo {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         nav_right_slug
         nav_right_text
         footer_column_info { 
           address
-          logo
+          logo {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           phone_number
         }
         footer_column_links {

@@ -40,6 +40,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+    }
     `)
   
     // Handle errors
@@ -49,6 +50,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      console.log(node.frontmatter.slug);
       createPage({
         path: node.fields.slug,
         component: listingTemplate,
@@ -58,3 +60,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       })
     })
   }
+
+
+

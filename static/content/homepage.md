@@ -8,16 +8,16 @@ intro: >-
 
 
   <!--EndFragment-->
-real-estate-logo: /images/uploads/artboard-1.png
-brokerage-logo: /images/uploads/artboard-1.png
+real-estate-logo: /images/artboard-1.png
+brokerage-logo: /images/artboard-1.png
 slider-images:
-  - image: /images/uploads/stock-photo-3.jpg
+  - image: /images/stock-photo-3.jpg
     description: Get the keys to your home
     slug: /find-your-home
-  - image: /images/uploads/stock-photo-2.jpg
+  - image: /images/stock-photo-2.jpg
     description: Write that contract!
     slug: /find-your-home
-  - image: /images/uploads/stock-photo-1.jpg
+  - image: /images/stock-photo-1.jpg
     description: Move in!
     slug: /find-your-home
 services:
@@ -33,11 +33,11 @@ services:
 featured-listings:
   - address: 1234 Address Ln.
     price: 120,000
-    photo: /images/uploads/stock-photo-1.jpg
+    photo: /images/stock-photo-1.jpg
   - address: 456 Streety St
     price: 500,000
-    photo: /images/uploads/stock-photo-2.jpg
+    photo: /images/stock-photo-2.jpg
   - address: 789 Terrance Terrace
     price: 999,000
-    photo: /images/uploads/stock-photo-3.jpg
+    photo: /images/stock-photo-3.jpg
 ---

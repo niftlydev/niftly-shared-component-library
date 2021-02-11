@@ -1,7 +1,7 @@
 ---
 title: About Us Test
 intro: We are Kashani Real Estate Team!
-jumbo-image: /images/uploads/stock-photo-1.jpg
+jumbo-image: /images/stock-photo-1.jpg
 intro-list:
   - intro-item: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -26,7 +26,7 @@ team-member:
     email: bdaneshmand@something.com
     instagram: link
     facebook: link
-    photo: /images/uploads/stock-photo-3.jpg
+    photo: /images/stock-photo-3.jpg
   - name: Caleb Kliewer 
     description: Lorem ipsum dolor sit amet,  consectetur adipiscing elit, sed  do
       eiusmod tempor incididunt ut  labore et dolore magna aliqua. "
@@ -35,7 +35,7 @@ team-member:
     email: bdaneshmand@something.com
     instagram: link
     facebook: link
-    photo: /images/uploads/stock-photo-3.jpg
+    photo: /images/stock-photo-3.jpg
 testimonial:
   - body: Description, this is some text. Some test text which is weird because test
       and text only have 1 letter difference.

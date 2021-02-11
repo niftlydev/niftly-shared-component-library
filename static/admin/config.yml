@@ -3,8 +3,8 @@ backend:
   local_backend: true
   branch: master
 publish_mode: editorial_workflow
-media_folder: "static/images/uploads"
-public_folder: /images/uploads
+media_folder: "static/images"
+public_folder: /images
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
@@ -12,7 +12,7 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
@@ -88,6 +88,15 @@ collections:
           - {label: Intro, name: intro, widget: markdown}
           - {label: Real Estate Logo, name: real-estate-logo, widget: image}
           - {label: Brokerage Logo, name: brokerage-logo, widget: image}
+          - label: Main Highlight Box
+            name: main-highlight-box
+            widget: object
+            fields:
+              - {label: Image, name: image, widget: image}
+              - {label: Heading, name: heading, widget: string}
+              - {label: Body, name: body, widget: string}
+              - {label: Action Text, name: action-text, widget: string}
+              - {label: Action Slug, name: action-slug, widget: string}
           - label: Slider Images
             name: slider-images
             widget: list

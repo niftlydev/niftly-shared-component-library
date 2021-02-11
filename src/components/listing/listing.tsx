@@ -1,7 +1,7 @@
 import React from 'react';
-import {Box, Center, Image} from '@chakra-ui/react';
+import {Box, Center} from '@chakra-ui/react';
 import { IInfoBox, Info, InfoBox } from '../info-box/info-box';
-
+import Img from 'gatsby-image';
 
 export interface IListingItem {
     infoBox: IInfoBox
@@ -35,7 +35,10 @@ export const Listing = ({listing}: ListingProps) => {
             </Box>
             <Box flex="1 1 50%">
                 <Center height="100%">
-                    <Image src={listing.image} alt={listing.imageAlt}/>
+                    <Img
+                        fluid={listing.image.childImageSharp.fluid}
+                        alt={listing.imageAlt}
+                    />
                 </Center>
             </Box>
         </Box>

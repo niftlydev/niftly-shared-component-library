@@ -10,13 +10,19 @@ export const useListingData = () => {
 								fileAbsolutePath
 								frontmatter {
 									address
-                  bio
+                  					bio
 									price
-									listing_image
+									listing_image {
+										childImageSharp {
+											fluid {
+											  ...GatsbyImageSharpFluid
+											}
+										  }
+									}
 								}
-                fields {
-                  slug
-                }
+								fields {
+									slug
+								}
 							}
 						}
 					}
