@@ -37,7 +37,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               listing_image {
                 childImageSharp {
                   fluid {
-                    ...GatsbyImageSharpFluid
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
                   }
                 }
               }
