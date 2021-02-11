@@ -19,28 +19,33 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const listingTemplate = require.resolve(`./src/templates/listingTemplate.tsx`)
   
     const result = await graphql(`
-      {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          limit: 1000,
-          filter: {fileAbsolutePath: {regex: "/listing//"}}
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                address
-                bio
-                price
-                listing_image
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000,
+        filter: {fileAbsolutePath: {regex: "/listing//"}}
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              address
+              bio
+              price
+              listing_image {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
               }
             }
           }
         }
       }
-    }
+    } 
     `)
   
     // Handle errors
