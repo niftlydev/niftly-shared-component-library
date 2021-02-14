@@ -89,17 +89,22 @@
     "niftly.shared/slider@0.0.2": {
         "files": [
             {
-                "relativePath": "src/components/slider/slider.tsx",
-                "test": false,
-                "name": "slider.tsx"
+                "name": "index.tsx",
+                "relativePath": "src/components/slider/index.tsx",
+                "test": false
             },
             {
+                "name": "slider.tsx",
+                "relativePath": "src/components/slider/slider.tsx",
+                "test": false
+            },
+            {
+                "name": "image-slider-styles.scss",
                 "relativePath": "src/components/slider/styles/image-slider-styles.scss",
-                "test": false,
-                "name": "image-slider-styles.scss"
+                "test": false
             }
         ],
-        "mainFile": "src/components/slider/slider.tsx",
+        "mainFile": "src/components/slider/index.tsx",
         "trackDir": "src/components/slider",
         "origin": "AUTHORED",
         "exported": true
