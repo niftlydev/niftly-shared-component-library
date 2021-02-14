@@ -30,12 +30,12 @@ export class Info implements IInfoBox {
     }
 }
 
-type InfoBoxProps = {
+interface InfoBoxProps {
     info: IInfoBox,
     border?: boolean
 }
 
-export const InfoBox = ({info, border} : InfoBoxProps) => {
+export const InfoBox = ({info, border}: any) => {
     return (
         <Box flex="1" height="100%" width="100%" display="flex" flexDirection="column" justifyContent="space-between" borderColor="brand.footbarColor" borderWidth={border ? "2px" : "0px"}>
             <Box flex={5} display="flex" flexDirection="row">
@@ -49,7 +49,7 @@ export const InfoBox = ({info, border} : InfoBoxProps) => {
                 </Box>
                 {info.image ? <Box flex="1 1 50%"><Center height="100%"><Image src={info.image}/></Center></Box> : <></>}
             </Box>
-            <InfoBoxFooter social={info.social}/> 
+            <InfoBoxFooter socials={info.social}/> 
         </Box>
     )
 }
