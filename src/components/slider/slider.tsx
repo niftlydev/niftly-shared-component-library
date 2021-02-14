@@ -29,7 +29,7 @@ export const ImageSlider = ({images, padding, height, width}: {images: Array<any
                         <Center>
                             <Img
                                 fluid={image.image.childImageSharp.fluid}
-                                alt="asdf;lkj"
+                                alt={image.alt}
                             />
                         </Center>                                    
                     )

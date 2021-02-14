@@ -1,7 +1,7 @@
 import * as React from "react"
 import { HighlightBox } from "../components/highlight-box/highlight-box";
 import { propertyFactory } from "../utils/property/property-factory";
-import { ImageSlider } from '../components/slider';
+import { ImageSlider } from '../components/slider/slider';
 import { ServicesBoxFactory } from '../utils/front-page/services-box';
 import Layout from '../components/layout/layout';
 import {Box, Image, Text, Center} from '@chakra-ui/react';
