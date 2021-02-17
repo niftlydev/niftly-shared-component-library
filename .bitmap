@@ -107,6 +107,19 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "niftly.shared/navbar@0.0.2": {
+        "files": [
+            {
+                "relativePath": "src/components/navbar/static-navbar.tsx",
+                "test": false,
+                "name": "static-navbar.tsx"
+            }
+        ],
+        "mainFile": "src/components/navbar/static-navbar.tsx",
+        "trackDir": "src/components/navbar",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "niftly.shared/property@0.0.1": {
         "files": [
             {

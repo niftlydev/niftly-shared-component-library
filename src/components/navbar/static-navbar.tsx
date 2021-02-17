@@ -8,14 +8,7 @@ export interface LinkToPage {
     slug: string
 }
 
-export class StaticNavbarTheme {
-    constructor(navbarColor){
-        this.navbarColor = navbarColor
-    }
-    navbarColor: string;
-}
-
-const StaticNavbar = ({links, rightLink, logoImg, theme}: {links: Array<LinkToPage>, rightLink: LinkToPage, logoImg: any, theme: StaticNavbarTheme}) => {
+const StaticNavbar = ({links, rightLink, logoImg}: {links: Array<LinkToPage>, rightLink: LinkToPage, logoImg: any}) => {
 
     return (
         <Box alignItems="center" bg="brand.navbarColor" w="100%" h="80px" p={4}>
@@ -28,7 +21,7 @@ const StaticNavbar = ({links, rightLink, logoImg, theme}: {links: Array<LinkToPa
                     </Center>                 
                 </Box>
                 <Spacer />
-                <Box bg="brand.navbarColor">
+                <Box h="10px" bg="brand.navbarColor">
                     <Grid templateColumns="repeat(5, 1fr)" gap={6}>
                         {links.map(link => {
                             return <Box h="10px" w="100%"><Center><Button colorScheme="brand" color="white" as={Link} to={link.slug}>{link.text}</Button></Center></Box>
