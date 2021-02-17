@@ -2,9 +2,8 @@ import React from "react"
 import {Box} from '@chakra-ui/react';
 import columnFactory from "../../utils/footer/column-factory";
 import { Footer, Column, ColumnType } from '../footer/footer';
-import StaticNavbar from '../navbar/static-navbar';
+import StaticNavbar, { StaticNavbarTheme } from '../navbar/static-navbar';
 import { useStaticQuery, graphql } from "gatsby";
-
 
 export class Link {
   constructor(text, slug){
@@ -62,9 +61,11 @@ const data = useStaticQuery(graphql`
   }
 `)
 
+var theme = new StaticNavbarTheme("brand.navbarColor");
+
   return (
       <Box>
-          <StaticNavbar links={data.layout.frontmatter.navbar_link} rightLink={new Link(data.layout.frontmatter.nav_right_text, data.layout.frontmatter.nav_right_slug)} logoImg={data.layout.frontmatter.nav_logo} />
+          <StaticNavbar links={data.layout.frontmatter.navbar_link} rightLink={new Link(data.layout.frontmatter.nav_right_text, data.layout.frontmatter.nav_right_slug)} logoImg={data.layout.frontmatter.nav_logo} theme={theme} />
             {children} 
            <Footer columns={columnFactory(data.layout.frontmatter.footer_column_info, data.layout.frontmatter.footer_column_links, data.layout.frontmatter.footer_column_social)} />
       </Box>
