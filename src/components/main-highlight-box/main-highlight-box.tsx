@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Heading, Text, Box, Button, Flex, Center, SimpleGrid} from '@chakra-ui/react';
 import Img from 'gatsby-image';
 
-export const MainHighlightBox = ({heading, body, actionText, img}) => {
+export const MainHighlightBox = ({heading, body, actionText, img, highlight}) => {
 
     return (
         <SimpleGrid columns={2}>
@@ -11,6 +11,7 @@ export const MainHighlightBox = ({heading, body, actionText, img}) => {
                     <Box>
                         <Heading>{heading}</Heading>
                         <Text>{body}</Text>
+                        {highlight ? React.cloneElement(highlight) : <></>}
                         <Button size="lg" colorScheme="green" mt="24px">
                             {actionText}
                         </Button>
