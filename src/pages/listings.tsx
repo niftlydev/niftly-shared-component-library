@@ -62,9 +62,9 @@ const ListingsPage = () => {
                     l.node.frontmatter.listing_image
                   );
 
-                  return <Box p="2.5%" cursor={hover ? "pointer" : "default"} onClick={() => navigate(l.node.fields.slug)} 
+                  return <Box p="2.5%" height="32em" cursor={hover ? "pointer" : "default"} onClick={() => navigate(l.node.fields.slug)} 
                     onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-                      <InfoBox info={info} border={true}/>
+                      <InfoBox info={info} border={true} imageHeight="22em" imageWidth="22em"/>
                     </Box>
             })}
             </Box>
