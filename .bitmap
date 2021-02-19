@@ -34,6 +34,19 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "niftly.shared/form@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/form/netlify-form.tsx",
+                "test": false,
+                "name": "netlify-form.tsx"
+            }
+        ],
+        "mainFile": "src/components/form/netlify-form.tsx",
+        "trackDir": "src/components/form",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "niftly.shared/highlight-box@0.0.1": {
         "files": [
             {
@@ -107,7 +120,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/navbar@0.0.2": {
+    "niftly.shared/navbar@0.0.3": {
         "files": [
             {
                 "relativePath": "src/components/navbar/static-navbar.tsx",
@@ -167,6 +180,19 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "niftly.shared/testimonial@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/testimonial/testimonial.tsx",
+                "test": false,
+                "name": "testimonial.tsx"
+            }
+        ],
+        "mainFile": "src/components/testimonial/testimonial.tsx",
+        "trackDir": "src/components/testimonial",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "niftly.shared/utils/footer@0.0.1": {
         "files": [
             {
@@ -177,6 +203,32 @@
         ],
         "mainFile": "src/utils/footer/column-factory.ts",
         "trackDir": "src/utils/footer",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "niftly.shared/utils/form-factory@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/utils/form/form-factory.ts",
+                "test": false,
+                "name": "form-factory.ts"
+            }
+        ],
+        "mainFile": "src/utils/form/form-factory.ts",
+        "trackDir": "src/utils/form",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "niftly.shared/utils/services-box-factory@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/utils/front-page/services-box/services-box-factory.tsx",
+                "test": false,
+                "name": "services-box-factory.tsx"
+            }
+        ],
+        "mainFile": "src/utils/front-page/services-box/services-box-factory.tsx",
+        "trackDir": "src/utils/front-page/services-box",
         "origin": "AUTHORED",
         "exported": true
     },
