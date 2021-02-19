@@ -16,7 +16,7 @@ const IndexPage = ({data}) => {
 
   const savingsSliderProps = {
     size: ComponentSize.sm,
-    padding: PaddingSize.lg,
+    padding: PaddingSize.md,
     min: 150000,
     max: 1000000,
     step: 10000,
