@@ -83,19 +83,19 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/info-box@0.0.1": {
+    "niftly.shared/info-box@0.0.3": {
         "files": [
             {
+                "name": "info-box.tsx",
                 "relativePath": "src/components/info-box/info-box.tsx",
-                "test": false,
-                "name": "info-box.tsx"
+                "test": false
             }
         ],
         "mainFile": "src/components/info-box/info-box.tsx",
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/listing@0.0.1": {
+    "niftly.shared/listing@0.0.5": {
         "files": [
             {
                 "relativePath": "src/components/listing/listing.tsx",
@@ -145,6 +145,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
+<<<<<<< HEAD
     "niftly.shared/slider@0.0.3": {
         "files": [
             {
@@ -161,6 +162,19 @@
                 "name": "image-slider-styles.scss",
                 "relativePath": "src/components/slider/styles/image-slider-styles.scss",
                 "test": false
+=======
+    "niftly.shared/slider@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/slider/index.tsx",
+                "test": false,
+                "name": "index.tsx"
+            },
+            {
+                "relativePath": "src/components/slider/styles/image-slider-styles.scss",
+                "test": false,
+                "name": "image-slider-styles.scss"
+>>>>>>> master
             }
         ],
         "mainFile": "src/components/slider/index.tsx",
@@ -180,6 +194,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
+<<<<<<< HEAD
     "niftly.shared/testimonial@0.0.1": {
         "files": [
             {
@@ -229,6 +244,17 @@
         ],
         "mainFile": "src/utils/front-page/services-box/services-box-factory.tsx",
         "trackDir": "src/utils/front-page/services-box",
+=======
+    "niftly.shared/static-navbar@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/static-navbar.tsx",
+                "test": false,
+                "name": "static-navbar.tsx"
+            }
+        ],
+        "mainFile": "src/components/static-navbar.tsx",
+>>>>>>> master
         "origin": "AUTHORED",
         "exported": true
     },

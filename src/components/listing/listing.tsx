@@ -9,7 +9,7 @@ export interface IListingItem {
     imageAlt?: string
 }
 
-export type ListingProps = {
+export interface ListingProps {
     listing: IListingItem
 }
 
@@ -31,15 +31,7 @@ export const Listing = ({listing}: ListingProps) => {
     return (
         <Box display="flex" flexDirection="row" margin="5" borderWidth="1px" borderColor="brand.footbarColor">
             <Box flex="1 1 50%">
-                <InfoBox info={listing.infoBox} border={false}/>
-            </Box>
-            <Box flex="1 1 50%">
-                <Center height="100%">
-                    <Img
-                        fluid={listing.image.childImageSharp.fluid}
-                        alt={listing.imageAlt}
-                    />
-                </Center>
+                <InfoBox info={listing.infoBox as IInfoBox} border={false} imageHeight="22em" imageWidth="30em"/>
             </Box>
         </Box>
     )
