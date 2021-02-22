@@ -148,6 +148,13 @@ collections:
               - {label: "Customer", name: "customer", widget: "string"}
               - {label: "Body", name: "body", widget: "markdown"}
 
+      - label: "Contact Us"
+        name: "contact-us"
+        file: "static/content/contact-us.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+
+
       - label: "Services"
         name: "services"
         file: "static/content/services.md"

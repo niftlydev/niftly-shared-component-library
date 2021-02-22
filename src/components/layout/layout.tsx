@@ -5,7 +5,6 @@ import { Footer, Column, ColumnType } from '../footer/footer';
 import StaticNavbar from '../navbar/static-navbar';
 import { useStaticQuery, graphql } from "gatsby";
 
-
 export class Link {
   constructor(text, slug){
     this.text = text;
@@ -17,7 +16,7 @@ export class Link {
 }
 
 
-export default function Layout({ children }: {data: any, children: any}) {
+export default function Layout({ children }: { children: any }) {
     
 const data = useStaticQuery(graphql`
   query LayoutQuery {
@@ -61,6 +60,7 @@ const data = useStaticQuery(graphql`
     }
   }
 `)
+
 
   return (
       <Box>
