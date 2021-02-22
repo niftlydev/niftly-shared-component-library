@@ -8,20 +8,29 @@ import {Box, Image, Text, Center} from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import { MainHighlightBox } from '../components/main-highlight-box/main-highlight-box';
 import { SavingsSlider, ISavingsSliderProps } from '../components/real-estate/savings-slider/savings-slider';
-import { ComponentSize } from '../utils/sizing/calculate-component-size/calculate-component-size';
-import { PaddingSize } from '../utils/sizing/calculate-padding/calculate-padding';
+import { PaddingSize } from '../components/sizing-wrapper/sizing-wrapper';
+import { MailchimpSubscribe, IMailchimpSubscribeProps } from "../components/mailchimp-subscribe/mailchimp-subscribe";
 
 // markup
 const IndexPage = ({data}) => {
 
   const savingsSliderProps = {
-    size: ComponentSize.sm,
-    padding: PaddingSize.md,
+    sizingProps: { padding: PaddingSize.sm },
     min: 150000,
     max: 1000000,
     step: 10000,
-    percentageToSave: 0.01
+    percentageToSave: 0.02,
+    actionBtnText: "List Your Home",
+    actionBtnSlug: "/contact-us"
   } as ISavingsSliderProps;
+
+  const mailChimpSubProps = {
+    sizingProps: { padding: PaddingSize.md },
+    header: "NEWSLETTER",
+    subHeader: "Stay in Touch",
+    description: "Get access to new listings, inspiration, and tips.",
+    toastTitle: "You're the best!"
+  } as IMailchimpSubscribeProps;
 
   return (
     <main>
@@ -37,13 +46,19 @@ const IndexPage = ({data}) => {
             <SavingsSlider props={savingsSliderProps} />
           </Box>
 
-          {/* <Box p="20px" pb="50px">          
-            <HighlightBox highlights={ServicesBoxFactory(data.homepage.frontmatter.services)} />
-          </Box> */}
+          <Box>
+            <MailchimpSubscribe props={mailChimpSubProps} />
+          </Box>
 
           {/* <Box w="100%" p="10px">
             <HighlightBox highlights={propertyFactory(data.homepage.frontmatter.featured_listings)} withBorder={true}/>
           </Box> */}
+
+          {/* <Box p="20px" pb="50px">          
+            <HighlightBox highlights={ServicesBoxFactory(data.homepage.frontmatter.services)} />
+          </Box> */}
+
+          
 
         </Layout>
     </main> 

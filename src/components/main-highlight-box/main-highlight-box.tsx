@@ -13,7 +13,7 @@ export const MainHighlightBox = ({data}) => {
                         <Box>
                             <Heading>{data.heading}</Heading>
                             <Text>{data.body}</Text>
-                            <Button as={Link} to={data.action_slug} size="lg" colorScheme="green" mt="24px">
+                            <Button variant="action-link" as={Link} to={data.action_slug} size="lg" mt="24px">
                                 {data.action_text}
                             </Button>
                         </Box>          
@@ -36,7 +36,7 @@ export const MainHighlightBox = ({data}) => {
                         <Box>
                             <Heading>{data.heading}</Heading>
                             <Text>{data.body}</Text>
-                            <Button as={Link} to={data.action_slug} size="lg" colorScheme="green" mt="24px">
+                            <Button variant="action-link" as={Link} to={data.action_slug} size="lg" mt="24px">
                                 {data.action_text}
                             </Button>
                         </Box>          

@@ -24,13 +24,13 @@ const StaticNavbar = ({links, rightLink, logoImg}: {links: Array<LinkToPage>, ri
                 <Box h="10px" bg="brand.navbarColor">
                     <Grid templateColumns="repeat(5, 1fr)" gap={6}>
                         {links.map(link => {
-                            return <Box h="10px" w="100%"><Center><Button colorScheme="brand" color="white" as={Link} to={link.slug}>{link.text}</Button></Center></Box>
+                            return <Box h="10px" w="100%"><Center><Button variant="navbar-btn" color="white" as={Link} to={link.slug}>{link.text}</Button></Center></Box>
                         })}
                     </Grid>
                 </Box>
                 <Spacer />
                 <Box h="10px" bg="brand.navbarColor">
-                    <Center><Button colorScheme="brand" color="white" as={Link} to={rightLink.slug}>{rightLink.text}</Button></Center>
+                    <Center><Button variant="navbar-btn" color="white" as={Link} to={rightLink.slug}>{rightLink.text}</Button></Center>
                 </Box>    
             </Flex>                        
         </Box>

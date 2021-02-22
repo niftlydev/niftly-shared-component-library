@@ -18,6 +18,23 @@ const theme = extendTheme ({
       heading: "Ariel, serif",
       mono: "Menlo, monospace",
     },
+    components: {
+      Button: {
+        baseStyle: {
+          fontWeight: "bold"
+        },
+        variants: {
+          "navbar-btn": {
+            bg: "#1E324A",
+            color: "white"
+          },
+          "action-link": {
+            bg: "green.400",
+            color: "white"
+          },
+        }
+      }
+    }
 })
   
 

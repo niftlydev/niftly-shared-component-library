@@ -1,23 +1,23 @@
-import  React, { useState } from 'react';
-import { Box, Center, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Heading, Text } from '@chakra-ui/react';
-import { ComponentSize, calculateSize } from '../../../utils/sizing/calculate-component-size/calculate-component-size';
-import { PaddingSize, calculatePadding } from '../../../utils/sizing/calculate-padding/calculate-padding';
-import { CommonComponentWrapper } from '../../../utils/sizing/common/common-component-wrapper/common-component-wrapper';
-import { ICommonComponentProps } from '../../../utils/sizing/common/common-component-props/common-component-props';
+import  React, { Component, useState } from 'react';
+import { Link } from 'gatsby';
+import { Box, Center, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Heading, Text, Button, Icon } from '@chakra-ui/react';
+import { FaDollarSign } from 'react-icons/fa';
+import { SizingWrapper, ISizingWrapperProps, PaddingSize, calculatePadding, ComponentSize, calculateSize } from '../../sizing-wrapper/sizing-wrapper';
+import NumberFormat from 'react-number-format';
 
-export interface ISavingsSliderProps extends ICommonComponentProps {
+export interface ISavingsSliderProps extends ISizingWrapperProps {
+    sizingProps?: ISizingWrapperProps;
     min: number;
     max: number;
     step: number;
     percentageToSave: number;
+    actionBtnText: string;
+    actionBtnSlug: string;
 }
 
-export const SavingsSlider = ({props}: {props: ISavingsSliderProps}) => {
 
-    const commonProps = {
-        size: props.size,
-        padding: props.padding
-      } as ICommonComponentProps;
+
+export const SavingsSlider = ({props}: {props: ISavingsSliderProps}) => {
 
     const [sliderValue, setSliderValue] = useState(500000);
     const [savingsValue, setSavingsValue] = useState(0);
@@ -29,15 +29,15 @@ export const SavingsSlider = ({props}: {props: ISavingsSliderProps}) => {
     }
     
     return (
-        <CommonComponentWrapper props={commonProps}>
+        <SizingWrapper props={props.sizingProps}>
          
                 <Box>
-                    <Center><Heading>Drag to see what you can save by listing with us!</Heading></Center>
-                    <Center><Text>My home value: {sliderValue}</Text></Center>
-                    <Center><Text>I can save: ${savingsValue}</Text></Center>
+                    <Center p="2px"><Heading>Drag to see what you can save by listing with us!</Heading></Center>
+                    <Center p="2px"><Text>My home value: <NumberFormat value={sliderValue} displayType={'text'} thousandSeparator={true} prefix={'$'} /></Text></Center>
+                    <Center p="2px"><Text>I can save: <NumberFormat value={savingsValue} displayType={'text'} thousandSeparator={true} prefix={'$'} /></Text></Center>
                 </Box>
 
-                <Box>
+                <Box p="5px">
                     <Slider min={props.min} max={props.max} step={props.step} aria-label="slider-ex-5" onChangeEnd={(val) => calculateSavingsValue(val)}>
                         <SliderTrack>
                             <SliderFilledTrack />
@@ -46,6 +46,12 @@ export const SavingsSlider = ({props}: {props: ISavingsSliderProps}) => {
                     </Slider>
                 </Box>  
 
-        </CommonComponentWrapper>
+                <Box p="5px">
+                    <Center>
+                        <Button variant="action-link" as={Link} to={props.actionBtnSlug}>{props.actionBtnText}</Button>
+                    </Center>            
+                </Box>
+
+        </SizingWrapper>
     )
 }

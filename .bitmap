@@ -107,7 +107,20 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/main-highlight-box@0.0.1": {
+    "niftly.shared/mailchimp-subscribe@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/mailchimp-subscribe/mailchimp-subscribe.tsx",
+                "test": false,
+                "name": "mailchimp-subscribe.tsx"
+            }
+        ],
+        "mainFile": "src/components/mailchimp-subscribe/mailchimp-subscribe.tsx",
+        "trackDir": "src/components/mailchimp-subscribe",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "niftly.shared/main-highlight-box@0.0.2": {
         "files": [
             {
                 "relativePath": "src/components/main-highlight-box/main-highlight-box.tsx",
@@ -145,7 +158,32 @@
         "origin": "AUTHORED",
         "exported": true
     },
-<<<<<<< HEAD
+    "niftly.shared/real-estate/savings-slider@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/real-estate/savings-slider/savings-slider.tsx",
+                "test": false,
+                "name": "savings-slider.tsx"
+            }
+        ],
+        "mainFile": "src/components/real-estate/savings-slider/savings-slider.tsx",
+        "trackDir": "src/components/real-estate/savings-slider",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "niftly.shared/sizing-wrapper@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/sizing-wrapper/sizing-wrapper.tsx",
+                "test": false,
+                "name": "sizing-wrapper.tsx"
+            }
+        ],
+        "mainFile": "src/components/sizing-wrapper/sizing-wrapper.tsx",
+        "trackDir": "src/components/sizing-wrapper",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "niftly.shared/slider@0.0.3": {
         "files": [
             {
@@ -162,19 +200,6 @@
                 "name": "image-slider-styles.scss",
                 "relativePath": "src/components/slider/styles/image-slider-styles.scss",
                 "test": false
-=======
-    "niftly.shared/slider@0.0.1": {
-        "files": [
-            {
-                "relativePath": "src/components/slider/index.tsx",
-                "test": false,
-                "name": "index.tsx"
-            },
-            {
-                "relativePath": "src/components/slider/styles/image-slider-styles.scss",
-                "test": false,
-                "name": "image-slider-styles.scss"
->>>>>>> master
             }
         ],
         "mainFile": "src/components/slider/index.tsx",
@@ -194,7 +219,6 @@
         "origin": "AUTHORED",
         "exported": true
     },
-<<<<<<< HEAD
     "niftly.shared/testimonial@0.0.1": {
         "files": [
             {
@@ -244,17 +268,6 @@
         ],
         "mainFile": "src/utils/front-page/services-box/services-box-factory.tsx",
         "trackDir": "src/utils/front-page/services-box",
-=======
-    "niftly.shared/static-navbar@0.0.1": {
-        "files": [
-            {
-                "relativePath": "src/components/static-navbar.tsx",
-                "test": false,
-                "name": "static-navbar.tsx"
-            }
-        ],
-        "mainFile": "src/components/static-navbar.tsx",
->>>>>>> master
         "origin": "AUTHORED",
         "exported": true
     },
