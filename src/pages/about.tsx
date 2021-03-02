@@ -10,8 +10,6 @@ import { useAboutData } from "../queries/about-query";
 import { ISocialItems, SocialItem, SocialPlatform } from "../components/info-box/components/social";
 import { Testimonial } from '../components/testimonial/testimonial';
 import { IListingItem, Listing, ListingItem } from "../components/listing/listing";
-import { Gsap } from "../components/gsap/gsap";
-import {Power3} from 'gsap';
 import Img from 'gatsby-image';
 
 // markup
@@ -26,11 +24,6 @@ const AboutPage = () => {
 
   let sourceUri = `${jumbo_image}`;
 
-
-  const vars = [
-    {duration: 1.2, method: "from", vars: {y:1280, ease: Power3.easeOut}},
-    {duration: 1.2, method: "from", vars: {scale:.8, ease: Power3.easeOut}, delay: .2}
-  ]
 
   const renderDescription = (desc) => {
     if(desc.length > 300) {

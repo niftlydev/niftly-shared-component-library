@@ -6,9 +6,7 @@ import { useListingData } from '../queries/listing-query';
 import { IInfoBox, Info, InfoBox } from '../components/info-box/info-box';
 import { Box, Heading, Text } from '@chakra-ui/react';
 import { navigate } from 'gatsby';
-import { Gsap } from '../components/gsap/gsap';
 import Img from 'gatsby-image';
-import {Power3} from 'gsap';
 import { renderDescription } from '../utils/info-box/info-box-factory';
 
 interface ListingFrontmatter {

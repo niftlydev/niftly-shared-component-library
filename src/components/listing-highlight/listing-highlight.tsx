@@ -1,6 +1,5 @@
 import React, { ReactElement, useRef } from 'react';
 import {Box, Divider, Heading, Text, Image, Center} from '@chakra-ui/react'
-import Img from 'gatsby-image';
 
 interface ListingHighlightProps {
     background: ReactElement,
