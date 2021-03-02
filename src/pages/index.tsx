@@ -1,5 +1,5 @@
 import * as React from "react"
-import { HighlightBox } from "../components/highlight-box/highlight-box";
+import { HighlightBox, HighlightSize } from "../components/highlight-box/highlight-box";
 import { propertyFactory } from "../utils/property/property-factory";
 import { ImageSlider } from '../components/slider/slider';
 import { ServicesBoxFactory } from '../utils/front-page/services-box/services-box-factory';
@@ -7,6 +7,8 @@ import Layout from '../components/layout/layout';
 import {Box, Image, Text, Center} from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import { MainHighlightBox } from '../components/main-highlight-box/main-highlight-box';
+import { Gsap } from "../components/gsap/gsap";
+import {Power3} from 'gsap';
 import { SavingsSlider, ISavingsSliderProps } from '../components/real-estate/savings-slider/savings-slider';
 import { PaddingSize } from '../components/sizing-wrapper/sizing-wrapper';
 import { MailchimpSubscribe, IMailchimpSubscribeProps } from "../components/mailchimp-subscribe/mailchimp-subscribe";
