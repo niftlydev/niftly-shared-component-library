@@ -98,7 +98,7 @@ const AboutPage = () => {
               }
             </Box>
             <Box flex="1 0 25%" p="5%">
-              <HighlightBox highlights={tests} withBorder={true} size={HighlightSize.sm} padding={PaddingSize.xl}/>
+              <HighlightBox highlights={tests} withBorder={true} size={HighlightSize.xl} padding={PaddingSize.lg}/>
             </Box>
           </AboutUs>
         </Layout>
