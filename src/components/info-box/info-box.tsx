@@ -1,34 +1,33 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useRef } from 'react';
 import {Box, Divider, Heading, Text, Image, Center} from '@chakra-ui/react';
 import { InfoBoxFooter } from './components/info-box-footer';
 import { ISocialItems } from './components/social';
-import Img from 'gatsby-image';
 
 
 export interface IInfoBox {
-    heading: string
-    description: string
+    heading: ReactElement
+    description: ReactElement
     highlight?: ReactElement
     social?: Array<ISocialItems>
-    image?: any
+    image?: ReactElement
 }
 
 
 
 export class Info implements IInfoBox {
-    heading: string;
-    description: string;
+    description: ReactElement;
     highlight?: ReactElement;
-    socials?: Array<ISocialItems>
-    image?: any
+    heading: ReactElement;
+    social?: Array<ISocialItems>
+    image?: ReactElement
 
 
-    constructor(heading: string, description: string, highlight?: ReactElement, social?: Array<ISocialItems>, image?: any)
+    constructor(heading: ReactElement, description: ReactElement, highlight?: ReactElement, social?: Array<ISocialItems>, image?: ReactElement)
     {
         this.heading = heading
         this.description = description
         this.highlight = highlight
-        this.socials = social
+        this.social = social
         this.image = image
     }
 }
@@ -40,35 +39,27 @@ interface InfoBoxProps {
     border?: boolean
 }
 
-
-
-const renderDescription = (desc) => {
-    if(desc.length > 300) {
-        let shortened = desc.substring(0, 300);
-        shortened += "..."
-        return shortened
-    }
-
-    return desc
-}
-
-
-
-export const InfoBox = ({info, border, imageHeight, imageWidth}: any) => {
+export const InfoBox = ({info, border}: InfoBoxProps) => {
     return (
         <Box flex="1" height="100%" width="100%" display="flex" flexDirection="column" justifyContent="space-between" borderColor="brand.footbarColor" borderWidth={border ? "2px" : "0px"}>
             <Box flex={5} display="flex" flexDirection="row">
                 <Box flex="1 1 50%" display="flex" flexDirection="column" justifyContent="space-around" p="5%">
                     <Box paddingBottom="5%">
-                        <Heading as="h2" size="lg" paddingBottom="2px">{info.heading}</Heading>
+                        {React.cloneElement(info.heading)}
                         <Divider orientation="horizontal" borderWidth=".75px" borderColor="brand.footbarTitleColor" />
                     </Box>
-                    <Text fontSize="18px" paddingBottom="5%">{renderDescription(info.description)}</Text>
+                    {React.cloneElement(info.description)}
                     {React.cloneElement(info.highlight)}
                 </Box>
-                {info.image ? <Box flex="1 1 50%"><Center height="100%"><Img style={{height: imageHeight, width: imageWidth}} fluid={info.image.childImageSharp.fluid}/></Center></Box> : <></>}
+                {info.image ? (
+                    <Box flex="1 1 50%">
+                        <Center height="100%">
+                            {React.cloneElement(info.image)}
+                        </Center>
+                    </Box>)
+                    : <></>}
             </Box>
-            <InfoBoxFooter socials={info.socials}/> 
+            <InfoBoxFooter socials={info.social}/> 
         </Box>
     )
 }

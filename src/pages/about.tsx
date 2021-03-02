@@ -5,11 +5,14 @@ import { HighlightBox, HighlightSize, PaddingSize } from "../components/highligh
 import {highlightBoxFactory} from '../utils/highlight-box/highlight-box-factory';
 import Layout from '../components/layout/layout';
 import {AboutUs} from '../components/about-us/about-us';
-import {Box, Image, Text, Center} from '@chakra-ui/react';
+import {Box, Image, Text, Center, Heading} from '@chakra-ui/react';
 import { useAboutData } from "../queries/about-query";
 import { ISocialItems, SocialItem, SocialPlatform } from "../components/info-box/components/social";
 import { Testimonial } from '../components/testimonial/testimonial';
 import { IListingItem, Listing, ListingItem } from "../components/listing/listing";
+import { Gsap } from "../components/gsap/gsap";
+import {Power3} from 'gsap';
+import Img from 'gatsby-image';
 
 // markup
 const AboutPage = () => {
@@ -22,6 +25,24 @@ const AboutPage = () => {
   });
 
   let sourceUri = `${jumbo_image}`;
+
+
+  const vars = [
+    {duration: 1.2, method: "from", vars: {y:1280, ease: Power3.easeOut}},
+    {duration: 1.2, method: "from", vars: {scale:.8, ease: Power3.easeOut}, delay: .2}
+  ]
+
+  const renderDescription = (desc) => {
+    if(desc.length > 300) {
+        let shortened = desc.substring(0, 300);
+        shortened += "..."
+        return shortened
+    }
+
+    return desc
+}
+
+
 
   return (
     <main>
@@ -55,13 +76,17 @@ const AboutPage = () => {
                 let instagram: ISocialItems = new SocialItem(SocialPlatform.Instagram, member.instagram);
                 socials.push(facebook);
                 socials.push(instagram);
+                
+                let heading = <Heading as="h2" size="lg" paddingBottom="2px">{member.name}</Heading>
+                let image = <Img style={{height: "23em", width: "23em"}} fluid={member.photo.childImageSharp.fluid}/>
+                let description = <Text fontSize="18px" paddingBottom="5%">{renderDescription(member.description)}</Text>                
 
                 const info: IInfoBox = new Info(
-                  member.name,
-                  member.description,
+                  heading,
+                  description,
                   highlight,
                   socials,
-                  member.photo
+                  image
                 );
 
                 return (
@@ -73,7 +98,7 @@ const AboutPage = () => {
               }
             </Box>
             <Box flex="1 0 25%" p="5%">
-              <HighlightBox highlights={tests} withBorder={true} size={HighlightSize.md} padding={PaddingSize.xl}/>
+              <HighlightBox highlights={tests} withBorder={true} size={HighlightSize.sm} padding={PaddingSize.xl}/>
             </Box>
           </AboutUs>
         </Layout>
