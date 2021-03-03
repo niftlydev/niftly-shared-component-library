@@ -1,10 +1,10 @@
 import * as React from "react"
-import { HighlightBox } from "../components/highlight-box/highlight-box";
+import { HighlightBox, HighlightSize } from "../components/highlight-box/highlight-box";
 import { propertyFactory } from "../utils/property/property-factory";
 import { ImageSlider } from '../components/slider/slider';
 import { ServicesBoxFactory } from '../utils/front-page/services-box/services-box-factory';
 import Layout from '../components/layout/layout';
-import {Box, Image, Text, Center} from '@chakra-ui/react';
+import {Box, Image, Text, Center, Container} from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import { MainHighlightBox } from '../components/main-highlight-box/main-highlight-box';
 import { SavingsSlider, ISavingsSliderProps } from '../components/real-estate/savings-slider/savings-slider';
@@ -25,7 +25,12 @@ const IndexPage = ({data}) => {
   } as ISavingsSliderProps;
 
   const mailChimpSubProps = {
-    sizingProps: { padding: PaddingSize.md },
+    sizing: { padding: PaddingSize.md },
+    variants: {
+      textVariant: "brand-secondary",
+      headingVariant: "brand-secondary",
+      btnVariant: "action-link"
+    },
     header: "NEWSLETTER",
     subHeader: "Stay in Touch",
     description: "Get access to new listings, inspiration, and tips.",
@@ -46,12 +51,14 @@ const IndexPage = ({data}) => {
             <SavingsSlider props={savingsSliderProps} />
           </Box>
 
-          <Box>
+          <Box bg="blue.100">
             <MailchimpSubscribe props={mailChimpSubProps} />
           </Box>
+          
+
 
           {/* <Box w="100%" p="10px">
-            <HighlightBox highlights={propertyFactory(data.homepage.frontmatter.featured_listings)} withBorder={true}/>
+            <HighlightBox highlights={propertyFactory(data.homepage.frontmatter.featured_listings)} withBorder={true} size={HighlightSize.xl} padding={PaddingSize.md}/>
           </Box> */}
 
           {/* <Box p="20px" pb="50px">          

@@ -83,7 +83,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/info-box@0.0.3": {
+    "niftly.shared/info-box@0.0.4": {
         "files": [
             {
                 "name": "info-box.tsx",
@@ -95,7 +95,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/listing@0.0.5": {
+    "niftly.shared/listing@0.0.6": {
         "files": [
             {
                 "relativePath": "src/components/listing/listing.tsx",

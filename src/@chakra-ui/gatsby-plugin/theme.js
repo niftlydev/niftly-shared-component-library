@@ -33,8 +33,38 @@ const theme = extendTheme ({
             color: "white"
           },
         }
+      },
+      Text: {
+        variants: {
+          "brand-primary": {
+            color: "black"
+          },
+          "brand-secondary": {  
+            color: "white"
+          }
+        }
+      },
+      Heading: {
+        variants: {
+          "brand-primary": {
+            color: "black"
+          },
+          "brand-secondary": {
+            color: "white"
+          }
+        }
+      },
+      Container: {
+        variants: {
+          "brand-primary": {
+            bg: "white"
+          },
+          "brand-secondary": {
+            bg: "blue.100"
+          }
+        }
       }
-    }
+    },
 })
   
 

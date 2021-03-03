@@ -4,7 +4,7 @@ const {createFilePath} = require('gatsby-source-filesystem')
 exports.onCreateNode = ({node, getNode, actions}) => {
   const {createNodeField} = actions
   if(node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({node, getNode, basePath: `pages`})
+    const slug = createFilePath({node, getNode})
     createNodeField({
       node,
       name: `slug`,
@@ -59,7 +59,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      console.log(node.frontmatter.slug);
+      //console.log(node.frontmatter.slug);
       createPage({
         path: node.fields.slug,
         component: listingTemplate,
@@ -68,6 +68,65 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         },
       })
     })
+
+
+    const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`)
+    const blogCollectionNavTemplate = require.resolve(`./src/templates/blogCollectionNavTemplate.tsx`)
+
+    const blogResult = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: {frontmatter: {layout: {eq: "blog"}}}
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+                collection
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  // Handle errors
+  if (blogResult.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query for creating blogs.`)
+    return
+  }
+
+  blogResult.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    var formatCollectionForUrl = node.frontmatter.collection.replace(/\s+/g, '-').toLowerCase();
+    createPage({
+      path: "/blog/" + formatCollectionForUrl + node.fields.slug,
+      component: blogPostTemplate,
+      context: {
+        // additional data can be passed via context
+        slug: node.fields.slug,
+      },
+    })
+  })
+
+  var collections = ["Selling Your Home", "Buying a Home", "Real Estate Tips", "Discover OKC"]
+
+  collections.forEach( collection => {
+      var formatCollectionForUrl = collection.replace(/\s+/g, '-').toLowerCase();
+      createPage({
+        path: "/blog/" + formatCollectionForUrl,
+        component: blogCollectionNavTemplate,
+        context: {
+          // additional data can be passed via context
+          collection: collection,
+        },
+      })
+    })
+
+
   }
 
 
