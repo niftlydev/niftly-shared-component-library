@@ -95,7 +95,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/info-box@0.0.4": {
+    "niftly.shared/info-box@0.0.5": {
         "files": [
             {
                 "name": "info-box.tsx",
@@ -104,18 +104,6 @@
             }
         ],
         "mainFile": "src/components/info-box/info-box.tsx",
-        "origin": "AUTHORED",
-        "exported": true
-    },
-    "niftly.shared/listing@0.0.5": {
-        "files": [
-            {
-                "relativePath": "src/components/listing/listing.tsx",
-                "test": false,
-                "name": "listing.tsx"
-            }
-        ],
-        "mainFile": "src/components/listing/listing.tsx",
         "origin": "AUTHORED",
         "exported": true
     },

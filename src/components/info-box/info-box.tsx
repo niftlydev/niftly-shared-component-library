@@ -41,7 +41,7 @@ interface InfoBoxProps {
 
 
 
-export const InfoBox = ({info, border, imageHeight, imageWidth}: any) => {
+export const InfoBox = ({info, border}: any) => {
     return (
         <Box flex="1" height="100%" width="100%" display="flex" flexDirection="column" justifyContent="space-between" borderColor="brand.footbarColor" borderWidth={border ? "2px" : "0px"}>
             <Box flex={5} display="flex" flexDirection="row">

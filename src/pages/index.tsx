@@ -7,11 +7,13 @@ import Layout from '../components/layout/layout';
 import {Box, Image, Text, Center} from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import { MainHighlightBox } from '../components/main-highlight-box/main-highlight-box';
-import { Gsap } from "../components/gsap/gsap";
-import {Power3} from 'gsap';
 import { SavingsSlider, ISavingsSliderProps } from '../components/real-estate/savings-slider/savings-slider';
 import { PaddingSize } from '../components/sizing-wrapper/sizing-wrapper';
 import { MailchimpSubscribe, IMailchimpSubscribeProps } from "../components/mailchimp-subscribe/mailchimp-subscribe";
+import { Heading } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
+import { Link } from "gatsby";
+import Img from 'gatsby-image'
 
 // markup
 const IndexPage = ({data}) => {
@@ -34,6 +36,15 @@ const IndexPage = ({data}) => {
     toastTitle: "You're the best!"
   } as IMailchimpSubscribeProps;
 
+  let content = data.homepage.frontmatter.main_highlight_box;
+
+  let heading = <Box p="2.5%"><Heading>{content.heading}</Heading></Box>
+  let body = <Box p="2.5%"><Text>{content.body}</Text></Box>
+  let highlight = (<Box p="2.5%"><Button variant="action-link" as={Link} to={content.action_slug} size="lg" mt="24px">
+                                {content.action_text}
+                            </Button></Box>)
+  let image = <Img style={{height: "75%", width: "90%"}} fluid={content.image.childImageSharp.fluid} />
+
   return (
     <main>
       <title>Home Page</title>
@@ -41,7 +52,7 @@ const IndexPage = ({data}) => {
         <Layout>
 
           <Box pb="20px" pr="20px" pl="20px">
-            <MainHighlightBox data={data.homepage.frontmatter.main_highlight_box} />
+            <MainHighlightBox heading={heading} body={body} highlight={highlight} img={image}/>
           </Box>
 
           <Box>
