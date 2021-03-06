@@ -120,12 +120,12 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/main-highlight-box@0.0.2": {
+    "niftly.shared/main-highlight-box@0.0.3": {
         "files": [
             {
+                "name": "main-highlight-box.tsx",
                 "relativePath": "src/components/main-highlight-box/main-highlight-box.tsx",
-                "test": false,
-                "name": "main-highlight-box.tsx"
+                "test": false
             }
         ],
         "mainFile": "src/components/main-highlight-box/main-highlight-box.tsx",
