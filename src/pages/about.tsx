@@ -7,9 +7,8 @@ import Layout from '../components/layout/layout';
 import {AboutUs} from '../components/about-us/about-us';
 import {Box, Image, Text, Center, Heading} from '@chakra-ui/react';
 import { useAboutData } from "../queries/about-query";
-import { ISocialItems, SocialItem, SocialPlatform } from "../components/info-box/components/social";
+import { ISocialItems, SocialItem, SocialPlatform } from "../components/social-item/social-item";
 import { Testimonial } from '../components/testimonial/testimonial';
-import { IListingItem, Listing, ListingItem } from "../components/listing/listing";
 import Img from 'gatsby-image';
 
 // markup

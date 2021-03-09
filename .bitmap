@@ -95,27 +95,15 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/info-box@0.0.5": {
+    "niftly.shared/info-box@0.0.1": {
         "files": [
             {
-                "name": "info-box.tsx",
                 "relativePath": "src/components/info-box/info-box.tsx",
-                "test": false
+                "test": false,
+                "name": "info-box.tsx"
             }
         ],
         "mainFile": "src/components/info-box/info-box.tsx",
-        "origin": "AUTHORED",
-        "exported": true
-    },
-    "niftly.shared/listing@0.0.6": {
-        "files": [
-            {
-                "relativePath": "src/components/listing/listing.tsx",
-                "test": false,
-                "name": "listing.tsx"
-            }
-        ],
-        "mainFile": "src/components/listing/listing.tsx",
         "origin": "AUTHORED",
         "exported": true
     },
@@ -219,15 +207,15 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/social@0.0.1": {
+    "niftly.shared/social-item@0.0.1": {
         "files": [
             {
-                "relativePath": "src/components/info-box/components/social.ts",
+                "relativePath": "src/components/social-item/social-item.ts",
                 "test": false,
-                "name": "social.ts"
+                "name": "social-item.ts"
             }
         ],
-        "mainFile": "src/components/info-box/components/social.ts",
+        "mainFile": "src/components/social-item/social-item.ts",
         "origin": "AUTHORED",
         "exported": true
     },

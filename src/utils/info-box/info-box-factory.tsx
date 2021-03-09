@@ -1,5 +1,5 @@
 import React from 'react';
-import { ISocialItems, SocialItem, SocialPlatform } from "../../components/info-box/components/social"
+import { ISocialItems, SocialItem, SocialPlatform } from "../../components/social-item/social-item"
 import { Info } from "../../components/info-box/info-box"
 
 var social: Array<ISocialItems> = [
