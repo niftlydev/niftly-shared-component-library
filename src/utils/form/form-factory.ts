@@ -1,5 +1,9 @@
 import {NetlifyFormItem, InputSize, InputType, INetlifyFormItem} from '../../components/form/netlify-form';
 
+export interface IFormFactoryProps {
+    formItems: Array<INetlifyFormItem>;
+}
+
 export const formFactory = () => {
     let forms: Array<INetlifyFormItem> = new Array<INetlifyFormItem>();
 

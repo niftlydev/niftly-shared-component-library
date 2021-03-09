@@ -1,7 +1,7 @@
 import React, { cloneElement, ReactElement } from 'react';
 import {Box, Divider, Heading, Text, Image, Center} from '@chakra-ui/react';
 import { InfoBoxFooter } from './components/info-box-footer';
-import { ISocialItems } from './components/social';
+import { ISocialItems } from '../social-item/social-item';
 
 
 export interface IInfoBox {
@@ -33,7 +33,6 @@ export class Info implements IInfoBox {
 }
 
 
-
 interface InfoBoxProps {
     info: IInfoBox,
     border?: boolean
@@ -59,3 +58,5 @@ export const InfoBox = ({info, border}: any) => {
         </Box>
     )
 }
+
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Center, Icon, Link} from '@chakra-ui/react';
-import { ISocialItems, SocialPlatform } from './social';
+import { ISocialItems, SocialPlatform } from '../../social-item/social-item';
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa"
 import IconExternalLink from '../../icon/icon-external-link';
 

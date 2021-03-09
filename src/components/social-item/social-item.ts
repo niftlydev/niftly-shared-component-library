@@ -1,3 +1,4 @@
+
 export enum SocialPlatform {
     Instagram,
     Twitter,
@@ -19,3 +20,4 @@ export class SocialItem implements ISocialItems {
         this.link = link
     }
 }
+

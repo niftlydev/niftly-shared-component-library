@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import { Box, Center, Heading, Text, Input, Button, Grid, useToast } from '@chakra-ui/react';
+import { Box, Center, Heading, Text, Input, Button, Grid, Container, useToast } from '@chakra-ui/react';
 import { ISizingWrapperProps, SizingWrapper } from '../sizing-wrapper/sizing-wrapper';
+import { IVariantProps } from '../../utils/variant/variant-props';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
+import { ICustomizationProps } from '../../utils/customization/customization-props';
 
-export interface IMailchimpSubscribeProps {
-    sizingProps: ISizingWrapperProps
+export interface IMailchimpSubscribeProps extends ICustomizationProps {
     header: string;
     subHeader: string;
     description: string;
@@ -50,21 +51,22 @@ export const MailchimpSubscribe = ({props}: {props: IMailchimpSubscribeProps}) =
   }
 
     return (
-        <SizingWrapper props={props.sizingProps}>
-            <Box><Center><Heading>{props.header}</Heading></Center></Box>
-            <Box pt="25px"><Center><Heading>{props.subHeader}</Heading></Center></Box>
-            <Box pt="10px"><Center><Text>{props.description}</Text></Center></Box>
+        <SizingWrapper props={props.sizing}>
+            <Box>
+                <Box><Center><Heading variant={props.variants.headingVariant}>{props.header}</Heading></Center></Box>
+                <Box pt="25px"><Center><Heading variant={props.variants.headingVariant}>{props.subHeader}</Heading></Center></Box>
+                <Box pt="10px"><Center><Text variant={props.variants.textVariant}>{props.description}</Text></Center></Box>
 
-            <Box pt="15px">
-                <Center>
-                    <Grid templateColumns="repeat(3, 1fr)" gap={3}>
-                        <Box><Input onChange={(e) => setName(e.target.value)} placeholder="Name" type="text"/></Box>
-                        <Box><Input onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" type="email"/></Box>
-                        <Box w="100%"><Button variant="action-link" onClick={(e) => _handleSubmit(e)} w="100%">Subscribe</Button></Box>           
-                    </Grid>
-                </Center> 
+                <Box pt="15px">
+                    <Center>
+                        <Grid templateColumns="repeat(3, 1fr)" gap={3}>
+                            <Box><Input onChange={(e) => setName(e.target.value)} placeholder="Name" type="text"/></Box>
+                            <Box><Input onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" type="email"/></Box>
+                            <Box w="100%"><Button variant={props.variants.btnVariant} onClick={(e) => _handleSubmit(e)} w="100%">Subscribe</Button></Box>           
+                        </Grid>
+                    </Center> 
+                </Box>
             </Box>
-
         </SizingWrapper>
     )
 }
