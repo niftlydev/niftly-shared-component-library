@@ -1,16 +1,20 @@
 import * as React from 'react';
 import { navigate } from 'gatsby';
 import { Box, SimpleGrid, Heading, Text } from '@chakra-ui/react';
+import Img from 'gatsby-image';
 
 const BlogCollectionContainer = ({blogPosts, location}) => {
     return (
         <Box>
             {blogPosts.map((blogPost, key) => {
+
+                console.log(blogPost);
+
                 return (
-                    <Box key={key} onClick={() => navigate(location.pathname + blogPost.node.fields.slug)}>
+                    <Box p="15px" key={key} onClick={() => navigate(location.pathname + blogPost.node.fields.slug)}>
                         <SimpleGrid columns={2} spacing={10}>
                             <Box>
-                            
+
                             </Box>
 
                             <Box>

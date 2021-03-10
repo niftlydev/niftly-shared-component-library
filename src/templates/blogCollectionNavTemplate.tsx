@@ -16,11 +16,10 @@ export default function Template({
             <Box>
                 <Center><Heading>{pageContext.collection}</Heading></Center>
 
-                <Center>
                     <Box>
                         <BlogCollectionContainer blogPosts={edges} location={location} />
                     </Box>
-                </Center>
+
             </Box>
         </Layout>
      
@@ -29,7 +28,7 @@ export default function Template({
   
   
   export const pageQuery = graphql`
-    query getAllForCollection($collection: String) {
+  query getAllForCollection($collection: String) {
     allMarkdownRemark(limit: 1000, filter: {frontmatter: {collection: {eq: $collection}}}) {
       edges {
         node {
@@ -41,6 +40,13 @@ export default function Template({
             title
             author
             date
+            thumbnail {
+                childImageSharp {
+                    fixed(width: 125, height: 125) {
+                        ...GatsbyImageSharpFixed
+                    }
+                }
+            }
           }
         }
       }
