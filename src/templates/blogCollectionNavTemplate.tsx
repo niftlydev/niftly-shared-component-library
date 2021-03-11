@@ -17,7 +17,7 @@ export default function Template({
                 <Center><Heading>{pageContext.collection}</Heading></Center>
 
                 <Center>
-                    <Box>
+                    <Box p="10px">
                         <BlogCollectionContainer blogPosts={edges} location={location} />
                     </Box>
                 </Center>
@@ -43,9 +43,10 @@ export default function Template({
             title
             author
             date
+            preview
             thumbnail {
                 childImageSharp {
-                    fixed(width: 125, height: 125) {
+                    fixed(width: 500, height: 300) {
                         ...GatsbyImageSharpFixed
                     }
                 }
