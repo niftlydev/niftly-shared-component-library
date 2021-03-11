@@ -11,7 +11,7 @@ const BlogCollectionContainer = ({blogPosts, location}) => {
             {blogPosts.map((blogPost, key) => {
 
                 return (
-                    <Box border="1px solid black" key={key} onClick={() => navigate(location.pathname + blogPost.node.fields.slug.replace("/", ""))}>
+                    <Box border="1px solid black" key={key} onClick={() => navigate(location.pathname + blogPost.node.fields.slug)}>
                         <SimpleGrid columns={2} spacing={3}>
 
                             <Img fixed={blogPost.node.frontmatter.thumbnail.childImageSharp.fixed} />

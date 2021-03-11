@@ -47,6 +47,7 @@ module.exports = {
           `gatsby-plugin-typescript`,
           `gatsby-plugin-sass`,
           `gatsby-plugin-netlify-cms`,
+          `gatsby-plugin-react-helmet`,
           {
             resolve: 'gatsby-plugin-mailchimp',
             options: {
