@@ -13,6 +13,32 @@
         "origin": "AUTHORED",
         "exported": false
     },
+    "niftly.shared/blog/blog-collection-container@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/blog/blog-collection-container/blog-collection-container.tsx",
+                "test": false,
+                "name": "blog-collection-container.tsx"
+            }
+        ],
+        "mainFile": "src/components/blog/blog-collection-container/blog-collection-container.tsx",
+        "trackDir": "src/components/blog/blog-collection-container",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "niftly.shared/blog/blog-collection-navbar@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/blog/blog-collection-navbar/blog-collection-navbar.tsx",
+                "test": false,
+                "name": "blog-collection-navbar.tsx"
+            }
+        ],
+        "mainFile": "src/components/blog/blog-collection-navbar/blog-collection-navbar.tsx",
+        "trackDir": "src/components/blog/blog-collection-navbar",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "niftly.shared/footer@0.0.1": {
         "files": [
             {
