@@ -10,7 +10,7 @@ navbar-link:
   - text: Contact Us
     slug: /contact-us
   - text: Blog
-    slug: /blog
+    slug: /blog/selling-your-home
 footer-column-info:
   - logo: /images/artboard-1.png
     address: 1234 asdffdsa ln.
