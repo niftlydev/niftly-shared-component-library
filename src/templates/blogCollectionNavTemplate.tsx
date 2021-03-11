@@ -16,9 +16,12 @@ export default function Template({
             <Box>
                 <Center><Heading>{pageContext.collection}</Heading></Center>
 
+                <Center>
                     <Box>
                         <BlogCollectionContainer blogPosts={edges} location={location} />
                     </Box>
+                </Center>
+                    
 
             </Box>
         </Layout>
