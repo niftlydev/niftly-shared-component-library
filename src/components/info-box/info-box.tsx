@@ -1,7 +1,7 @@
 import React, { cloneElement, ReactElement } from 'react';
 import {Box, Divider, Heading, Text, Image, Center} from '@chakra-ui/react';
-import { InfoBoxFooter } from './components/info-box-footer';
-import { ISocialItems } from '../social-item/social-item';
+import { InfoBoxFooter } from '@bit/niftly.shared.info-box-footer';
+import { ISocialItems } from '@bit/niftly.shared.social-item';
 
 
 export interface IInfoBox {
@@ -11,6 +11,8 @@ export interface IInfoBox {
     social?: Array<ISocialItems>
     image?: any
 }
+
+
 
 
 
@@ -32,10 +34,26 @@ export class Info implements IInfoBox {
     }
 }
 
-
 interface InfoBoxProps {
+
+
     info: IInfoBox,
+
+
     border?: boolean
+
+
+}
+
+
+export const renderDescription = (desc) => {
+    if(desc.length > 300) {
+        let shortened = desc.substring(0, 300);
+        shortened += "..."
+        return shortened
+    }
+
+    return desc
 }
 
 
@@ -58,5 +76,3 @@ export const InfoBox = ({info, border}: any) => {
         </Box>
     )
 }
-
-

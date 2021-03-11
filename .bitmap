@@ -83,20 +83,13 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/info-box-footer@0.0.1": {
+    "niftly.shared/info-box@0.0.2": {
         "files": [
             {
                 "relativePath": "src/components/info-box/components/info-box-footer.tsx",
                 "test": false,
                 "name": "info-box-footer.tsx"
-            }
-        ],
-        "mainFile": "src/components/info-box/components/info-box-footer.tsx",
-        "origin": "AUTHORED",
-        "exported": true
-    },
-    "niftly.shared/info-box@0.0.1": {
-        "files": [
+            },
             {
                 "relativePath": "src/components/info-box/info-box.tsx",
                 "test": false,
@@ -104,6 +97,7 @@
             }
         ],
         "mainFile": "src/components/info-box/info-box.tsx",
+        "trackDir": "src/components/info-box",
         "origin": "AUTHORED",
         "exported": true
     },
@@ -120,12 +114,12 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/main-highlight-box@0.0.2": {
+    "niftly.shared/main-highlight-box@0.0.3": {
         "files": [
             {
+                "name": "main-highlight-box.tsx",
                 "relativePath": "src/components/main-highlight-box/main-highlight-box.tsx",
-                "test": false,
-                "name": "main-highlight-box.tsx"
+                "test": false
             }
         ],
         "mainFile": "src/components/main-highlight-box/main-highlight-box.tsx",
