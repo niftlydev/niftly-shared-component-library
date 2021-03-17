@@ -85,12 +85,12 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/highlight-box@0.0.1": {
+    "niftly.shared/highlight-box@0.0.3": {
         "files": [
             {
+                "name": "highlight-box.tsx",
                 "relativePath": "src/components/highlight-box/highlight-box.tsx",
-                "test": false,
-                "name": "highlight-box.tsx"
+                "test": false
             }
         ],
         "mainFile": "src/components/highlight-box/highlight-box.tsx",
