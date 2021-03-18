@@ -85,7 +85,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/highlight-box@0.0.3": {
+    "niftly.shared/highlight-box@0.0.4": {
         "files": [
             {
                 "name": "highlight-box.tsx",
@@ -109,7 +109,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/info-box@0.0.2": {
+    "niftly.shared/info-box@0.0.3": {
         "files": [
             {
                 "relativePath": "src/components/info-box/components/info-box-footer.tsx",

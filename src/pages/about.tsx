@@ -10,6 +10,7 @@ import { useAboutData } from "../queries/about-query";
 import { ISocialItems, SocialItem, SocialPlatform } from "../components/social-item/social-item";
 import { Testimonial } from '../components/testimonial/testimonial';
 import Img from 'gatsby-image';
+import {isMobile} from 'react-device-detect';
 
 // markup
 const AboutPage = () => {
@@ -55,7 +56,7 @@ const AboutPage = () => {
                     )
                 })}
             </Box>
-            <Box flex="1 0 25%" display="flex" flexDirection="row" justifyContent="space-between" p="2.5%">
+            <Box flex="1 0 25%" display="flex" flexDirection="row" justifyContent="space-between" p="2.5%" flexBasis="auto" flexGrow={1} flexWrap="wrap">
               {team_member.map(member => {
                 let highlight = <div>
                   {member.position ? <p style={{fontWeight: 'bold'}}>{member.position}</p> : <></>}
@@ -70,7 +71,7 @@ const AboutPage = () => {
                 socials.push(instagram);
                 
                 let heading = <Heading as="h2" size="lg" paddingBottom="2px">{member.name}</Heading>
-                let image = <Img style={{height: "23em", width: "23em"}} fluid={member.photo.childImageSharp.fluid}/>
+                let image = <Img style={{height: "15em", width: "15em"}} fluid={member.photo.childImageSharp.fluid}/>
                 let description = <Text fontSize="18px" paddingBottom="5%">{renderDescription(member.description)}</Text>                
 
                 const info: IInfoBox = new Info(
@@ -82,7 +83,7 @@ const AboutPage = () => {
                 );
 
                 return (
-                  <Box p="10px" flex="0 1 45%">
+                  <Box p="10px" flex={isMobile ? "0 1 100%" : "0 1 45%"}>
                     <InfoBox info={info} border={true}/>
                   </Box>
                 )
