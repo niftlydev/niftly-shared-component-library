@@ -106,7 +106,7 @@ export const HighlightBox = ({highlights, size, padding, withBorder = false} : H
                     </Box>
 
 
-                    {isMobile && withBorder ? <Divider w="100%" alignSelf="center" borderColor="brand.footbarTitleColor" orientation="horizontal"/> : <></>}
+                    {isMobile && withBorder && i < highlights.length - 1 ? <Divider w="100%" alignSelf="center" borderColor="brand.footbarTitleColor" orientation="horizontal"/> : <></>}
 
 
                 </>
