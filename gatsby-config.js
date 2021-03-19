@@ -1,4 +1,13 @@
 module.exports = {
+    siteMetadata: {
+      title: "Kashani Real Estate",
+      titleTemplate: "Kashani Real Estate",
+      description:
+        "The best real estate website ever",
+      url: "https://kashani-re-dev.netlify.app", // No trailing slash allowed!
+      image: "/static/images/artboard-1.jpg", // Path to your image you placed in the 'static' folder
+      twitterUsername: "@jd21daugherty",
+    },
     plugins: [
           {
             resolve: `gatsby-source-filesystem`,

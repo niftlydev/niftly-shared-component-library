@@ -1,10 +1,8 @@
 import * as React from 'react';
-import {ListingFactory} from '../utils/listing/listing-factory';
-import {Listing} from '../components/listing/listing';
 import Layout from '../components/layout/layout';
 import { useListingData } from '../queries/listing-query';
 import { IInfoBox, Info, InfoBox } from '../components/info-box/info-box';
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text, SimpleGrid } from '@chakra-ui/react';
 import { navigate } from 'gatsby';
 import Img from 'gatsby-image';
 import { renderDescription } from '../utils/info-box/info-box-factory';
@@ -32,33 +30,21 @@ interface ListingMarkdown {
 
 const ListingsPage = () => {
 
-				// listing here is 
-				// {
-				// 	node; {
-				// 		"fileAsbolutePath"
-				// 		"frontmatter": {
-				// 				"address":
-				// 				"listing"
-				// 				"price"
-				// 				"listing_image"
-				// 		}
-				//	}	
-				//}
   const listing = useListingData();  
   const [hover, setHover] = React.useState(false);
-
        
     return (
       <main>
         <title>Home Page</title>  
           <Layout>
-            <Box p="15%">
+            <Box p="10px">
+              <SimpleGrid columns={2} spacing={5}>
                 {listing.edges.map((l: ListingMarkdown, index: number) => {
 
-                  let header = <Heading as="h2" size="xl">{l.node.frontmatter.address}</Heading>
-                  let highlight = <Heading as="h1" size="xl">{l.node.frontmatter.price}</Heading>
+                  let header = <Text fontWeight="bold">{l.node.frontmatter.address}</Text>
+                  let highlight = <Text fontWeight="bold">{l.node.frontmatter.price}</Text>
                   let description = <Text>{renderDescription(l.node.frontmatter.bio)}</Text>
-                  let image = <Img style={{height: "23em", width: "23em"}} fluid={l.node.frontmatter.listing_image.childImageSharp.fluid}/>
+                  let image = <Img style={{height: "20em", width: "15em"}} fluid={l.node.frontmatter.listing_image.childImageSharp.fluid}/>
 
                   let info: IInfoBox = new Info(
                     header,
@@ -67,11 +53,12 @@ const ListingsPage = () => {
                     undefined,
                     image
                   );
-                  return <Box p="2.5%" height="32em" cursor={hover ? "pointer" : "default"} onClick={() => navigate(l.node.fields.slug)} 
+                  return <Box p="10px" height="30em" cursor={hover ? "pointer" : "default"} onClick={() => navigate(l.node.fields.slug)} 
                     onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
                       <InfoBox info={info} border={true}/>
                     </Box>
             })}
+              </SimpleGrid>
             </Box>
           </Layout>
       </main> 
