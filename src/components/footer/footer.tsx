@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Grid, Center, Text, Heading } from '@chakra-ui/react';
+import { Box, Grid, Center, Text, Heading, Flex } from '@chakra-ui/react';
 import FooterColumnParent from './components/footer-column-parent';
+import { isMobile } from 'react-device-detect';
 
 export enum ColumnType {
     Info,
@@ -59,14 +60,14 @@ export class Column {
 export const Footer = ({columns}: {columns: Array<Column>}) => {
     return (
         <Box bg="brand.footbarColor">
-            <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+            <Flex direction={isMobile ? "column" : "row"} >
                 {columns.map(column => 
                     <Box w="100%" h="200px">
                         <Box padding="10px"><Center><Heading color="brand.footbarTitleColor" as="u" fontSize="3xl">{column.title}</Heading></Center></Box>
                         <Box padding="10px" color="white"><Center><FooterColumnParent column={column} /></Center></Box>                    
                     </Box>
                 )}               
-            </Grid>
+            </Flex>
         </Box>
     )
 };

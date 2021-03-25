@@ -66,7 +66,7 @@ const data = useStaticQuery(graphql`
       <Box>
           <StaticNavbar links={data.layout.frontmatter.navbar_link} rightLink={new Link(data.layout.frontmatter.nav_right_text, data.layout.frontmatter.nav_right_slug)} logoImg={data.layout.frontmatter.nav_logo} />
             {children} 
-           <Footer columns={columnFactory(data.layout.frontmatter.footer_column_info, data.layout.frontmatter.footer_column_links, data.layout.frontmatter.footer_column_social)} />
+          <Footer columns={columnFactory(data.layout.frontmatter.footer_column_info, data.layout.frontmatter.footer_column_links, data.layout.frontmatter.footer_column_social)} />
       </Box>
   )
     
