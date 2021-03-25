@@ -1,8 +1,9 @@
 import * as React from 'react';
-import {Box, Flex, Center, Spacer, Grid, Image, Button, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Input, DrawerFooter} from '@chakra-ui/react';
+import {Box, Flex, Center, Spacer, Grid, Image, Button, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Input, DrawerFooter, Icon, IconButton} from '@chakra-ui/react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import {isMobile} from 'react-device-detect';
+import { HamburgerIcon } from '@chakra-ui/icons';
 
 export interface LinkToPage {
     text: string;
@@ -17,7 +18,7 @@ export interface StaticNavbarProps {
 
 const StaticNavbar = ({links, rightLink, logoImg}: StaticNavbarProps) => {
     return (
-        <Box alignItems="center" bg="brand.navbarColor" w="100%" h="80px" p={4}>
+        <Box display="flex" alignItems="center" bg="brand.navbarColor" w="100%" h="80px" p={4}>
             {isMobile ? <MobileNavbar links={links} rightLink={rightLink} logoImg={logoImg} /> : <DesktopNavbar links={links} rightLink={rightLink} logoImg={logoImg} /> }
         </Box>
     )
@@ -56,9 +57,7 @@ const MobileNavbar = ({links, rightLink, logoImg}: StaticNavbarProps) => {
 
     return (
         <>
-            <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
-                Open
-            </Button>
+            <IconButton fontSize="2.5em" aria-label="menu" color="white" variant="link" icon={<HamburgerIcon/>} onClick={onOpen}/> 
             <Drawer
                 isOpen={isOpen}
                 placement="left"
@@ -68,10 +67,14 @@ const MobileNavbar = ({links, rightLink, logoImg}: StaticNavbarProps) => {
                 <DrawerOverlay>
                     <DrawerContent>
                         <DrawerCloseButton />
-                        <DrawerHeader>Create your account</DrawerHeader>
+                        <DrawerHeader/>
 
-                        <DrawerBody>
-                            <Box>box</Box>
+                        <DrawerBody >
+                            <Flex direction="column" flex={1} height="100%">
+                                {links.map(link => {
+                                    return <Box display="flex" alignItems="center" width="100%"><Center><Button fontSize="1.5em" color="brand.navbarColor" variant="unstyled" as={Link} to={link.slug}>{link.text}</Button></Center></Box>
+                                })}
+                            </Flex>
                         </DrawerBody>
                     </DrawerContent>
                 </DrawerOverlay>

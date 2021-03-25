@@ -153,7 +153,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/navbar@0.0.3": {
+    "niftly.shared/navbar@0.0.4": {
         "files": [
             {
                 "relativePath": "src/components/navbar/static-navbar.tsx",
