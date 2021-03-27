@@ -55,7 +55,7 @@ export const NetlifyForm = ({forms}: NetlifyFormProps) => {
             case InputType.Password:
                 return <Input type="password"/>
             case InputType.Submit:
-                return <Button width="25%" backgroundColor="brand.500" color="white" type="submit">{formInput.label}</Button> 
+                return <Box p="10px"><Button backgroundColor="brand.500" color="white" type="submit">{formInput.label}</Button></Box>
         }
     }
 
