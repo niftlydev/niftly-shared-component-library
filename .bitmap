@@ -85,7 +85,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "niftly.shared/highlight-box@0.0.4": {
+    "niftly.shared/highlight-box@0.0.5": {
         "files": [
             {
                 "name": "highlight-box.tsx",

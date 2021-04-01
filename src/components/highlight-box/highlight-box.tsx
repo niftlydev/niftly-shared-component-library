@@ -94,7 +94,7 @@ export const HighlightBox = ({highlights, size, padding, withBorder = false} : H
                 <>
 
 
-                    <Box maxWidth={calculateSize()} display="flex" flexDirection="row" flexBasis="auto" flexGrow={1}>
+                    <Box maxWidth={isMobile ? '100%': calculateSize()} display="flex" flexDirection="row" flexBasis="auto" flexGrow={1}>
 
 
                         <Box textAlign="center" padding={calculatePadding()}>{h}</Box>

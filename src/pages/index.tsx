@@ -14,6 +14,7 @@ import { Heading } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import { Link } from "gatsby";
 import Img from 'gatsby-image'
+import { highlightBoxFactory } from "../utils/highlight-box/highlight-box-factory";
 
 // markup
 const IndexPage = ({data}) => {
@@ -62,6 +63,9 @@ const IndexPage = ({data}) => {
 
           <Box>
             <SavingsSlider props={savingsSliderProps} />
+          </Box>
+          <Box>
+            <HighlightBox highlights={highlightBoxFactory()} size={HighlightSize.md} padding={PaddingSize.lg} withBorder={true} />
           </Box>
 
           <Box bg="blue.100">
