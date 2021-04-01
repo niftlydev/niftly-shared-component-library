@@ -62,7 +62,7 @@ export const Footer = ({columns}: {columns: Array<Column>}) => {
         <Box bg="brand.footbarColor">
             <Flex direction={isMobile ? "column" : "row"} >
                 {columns.map(column => 
-                    <Box w="100%" h="200px">
+                    <Box flex={1} h="200px">
                         <Box padding="10px"><Center><Heading color="brand.footbarTitleColor" as="u" fontSize="3xl">{column.title}</Heading></Center></Box>
                         <Box padding="10px" color="white"><Center><FooterColumnParent column={column} /></Center></Box>                    
                     </Box>

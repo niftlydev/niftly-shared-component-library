@@ -44,7 +44,7 @@ const ListingsPage = () => {
                   let header = <Text fontWeight="bold">{l.node.frontmatter.address}</Text>
                   let highlight = <Text fontWeight="bold">{l.node.frontmatter.price}</Text>
                   let description = <Text>{renderDescription(l.node.frontmatter.bio)}</Text>
-                  let image = <Img style={{height: "20em", width: "15em"}} fluid={l.node.frontmatter.listing_image.childImageSharp.fluid}/>
+                  let image = <Img style={{height: "auto", width: "25em"}} fluid={l.node.frontmatter.listing_image.childImageSharp.fluid}/>
 
                   let info: IInfoBox = new Info(
                     header,
