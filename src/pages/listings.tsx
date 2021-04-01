@@ -52,13 +52,13 @@ const ListingsPage = () => {
       <main>
         <title>Home Page</title>  
           <Layout>
-            <Box p="15%">
+            <Box p="2%">
                 {listing.edges.map((l: ListingMarkdown, index: number) => {
 
                   let header = <Heading as="h2" size="xl">{l.node.frontmatter.address}</Heading>
                   let highlight = <Heading as="h1" size="xl">{l.node.frontmatter.price}</Heading>
                   let description = <Text>{renderDescription(l.node.frontmatter.bio)}</Text>
-                  let image = <Img style={{height: "23em", width: "23em"}} fluid={l.node.frontmatter.listing_image.childImageSharp.fluid}/>
+                  let image = <Img style={{height: "auto", width: "25em"}} fluid={l.node.frontmatter.listing_image.childImageSharp.fluid}/>
 
                   let info: IInfoBox = new Info(
                     header,

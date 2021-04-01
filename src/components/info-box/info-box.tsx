@@ -63,7 +63,7 @@ export const InfoBox = ({info, border}: any) => {
     return (
         <Box flex="1" height="100%" width="100%" display="flex" flexDirection="column" justifyContent="space-between" borderColor="brand.footbarColor" borderWidth={border ? "2px" : "0px"}>
             <Box flex={5} display="flex" flexDirection="row" flexBasis="auto" flexGrow={1} flexWrap="wrap-reverse">
-                <Box maxWidth={isMobile ? "100%" : "50%"} display="flex" flexDirection="column" justifyContent="space-around" p="5%">
+                <Box overflow="hidden" maxWidth={isMobile ? "100%" : "50%"} display="flex" flexDirection="column" justifyContent="space-around" p="5%">
                     <Box paddingBottom="5%">
                         <Heading as="h2" size="lg" paddingBottom="2px">{info.heading}</Heading>
                         <Divider orientation="horizontal" borderWidth=".75px" borderColor="brand.footbarTitleColor" />
