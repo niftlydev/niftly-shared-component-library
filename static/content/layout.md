@@ -3,6 +3,8 @@ nav-right-text: Find Your Home
 nav-right-slug: /contact-us
 nav-logo: /images/artboard-1.png
 navbar-link:
+  - text: Home
+    slug: /
   - text: About Us
     slug: /about
   - text: Listings
