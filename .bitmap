@@ -191,6 +191,18 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "niftly.shared/seo@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/seo/seo.js",
+                "test": false,
+                "name": "seo.js"
+            }
+        ],
+        "mainFile": "src/components/seo/seo.js",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "niftly.shared/sizing-wrapper@0.0.1": {
         "files": [
             {
@@ -275,6 +287,18 @@
         ],
         "mainFile": "src/utils/form/form-factory.ts",
         "trackDir": "src/utils/form",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "niftly.shared/utils/info-box-factory@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/utils/info-box/info-box-factory.tsx",
+                "test": false,
+                "name": "info-box-factory.tsx"
+            }
+        ],
+        "mainFile": "src/utils/info-box/info-box-factory.tsx",
         "origin": "AUTHORED",
         "exported": true
     },

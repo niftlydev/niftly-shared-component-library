@@ -12,6 +12,7 @@ import {
   RedditShareButton,
   TwitterShareButton,
 } from "react-share";
+import SEO from '../components/seo/seo';
 
 export default function Template({
   data, location // this prop will be injected by the GraphQL query below.
@@ -19,10 +20,17 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
 
-  console.log(location);
+  console.log(data);
 
   return (
     <Layout>
+      <SEO
+          title={frontmatter.title}
+          description={frontmatter.preview || 'n/a'}
+          image={frontmatter.thumbnail.childImageSharp.fluid.src}
+          pathname={location.href}
+          article
+        />
       <Box h="100vh" pr="25px" pl="25px">
         <Box p="10px">
             <Center>
@@ -105,6 +113,9 @@ export const pageQuery = graphql`
         preview
         thumbnail {
           childImageSharp {
+            fluid{
+							src
+            }
             fixed(width: 700, height: 400) {
               ...GatsbyImageSharpFixed
             }
