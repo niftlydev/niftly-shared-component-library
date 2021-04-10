@@ -3,6 +3,7 @@ import { navigate } from 'gatsby';
 import { Box, SimpleGrid, Heading, Text } from '@chakra-ui/react';
 import Img from 'gatsby-image';
 import moment from 'moment'
+import {isMobile} from 'react-device-detect'
 
 
 const BlogCollectionContainer = ({blogPosts, location}) => {
@@ -12,10 +13,9 @@ const BlogCollectionContainer = ({blogPosts, location}) => {
 
                 return (
                     <Box border="1px solid black" key={key} onClick={() => navigate(location.pathname + blogPost.node.fields.slug)}>
-                        <SimpleGrid columns={2} spacing={3}>
-
+                        <SimpleGrid columns={isMobile ? 1 : 2} spacing={3}>
                             <Img fixed={blogPost.node.frontmatter.thumbnail.childImageSharp.fixed} />
-                            
+
                             <Box>
 
                                 <Box p="10px">

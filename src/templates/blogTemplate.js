@@ -13,6 +13,8 @@ import {
   TwitterShareButton,
 } from "react-share";
 import SEO from '../components/seo/seo';
+import {isMobile} from 'react-device-detect'
+
 
 export default function Template({
   data, location // this prop will be injected by the GraphQL query below.
@@ -31,7 +33,7 @@ export default function Template({
           pathname={location.href}
           article
         />
-      <Box h="100vh" pr="25px" pl="25px">
+      <Box h={isMobile ? "auto" : "100vh"} pr="25px" pl="25px">
         <Box p="10px">
             <Center>
               <Img fixed={frontmatter.thumbnail.childImageSharp.fixed} />
